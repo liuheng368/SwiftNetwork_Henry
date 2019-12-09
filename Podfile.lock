@@ -1,0 +1,81 @@
+PODS:
+  - Alamofire (4.9.1)
+  - CleanJSON (1.0.0)
+  - Differentiator (4.0.1)
+  - FBRetainCycleDetector (0.1.4)
+  - Kingfisher (5.11.0):
+    - Kingfisher/Core (= 5.11.0)
+  - Kingfisher/Core (5.11.0)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Result (4.1.0)
+  - RxAlamofire (5.1.0):
+    - RxAlamofire/Core (= 5.1.0)
+  - RxAlamofire/Core (5.1.0):
+    - Alamofire (~> 4.8)
+    - RxSwift (~> 5.0)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - Alamofire
+  - CleanJSON
+  - Kingfisher
+  - MLeaksFinder
+  - Moya
+  - RxAlamofire
+  - RxCocoa
+  - RxDataSources
+  - RxSwift
+  - SVProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CleanJSON
+    - Differentiator
+    - FBRetainCycleDetector
+    - Kingfisher
+    - MLeaksFinder
+    - Moya
+    - Result
+    - RxAlamofire
+    - RxCocoa
+    - RxDataSources
+    - RxRelay
+    - RxSwift
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  CleanJSON: 702dd619e1329c6399a579aa19af311acf47e461
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  Kingfisher: 4569606189149e19c7d9439f47e885d0679b7a90
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxAlamofire: a2d7621de4c23a0c6e7b476b504acc32838ee341
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: da4e8c9430dcf8c7d570ab958854dadcaa2f78c5
+
+COCOAPODS: 1.8.4

@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02F2556E239E27110001E2EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2556D239E27110001E2EC /* AppDelegate.swift */; };
+		02F25570239E27110001E2EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2556F239E27110001E2EC /* SceneDelegate.swift */; };
+		02F25572239E27110001E2EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F25571239E27110001E2EC /* ViewController.swift */; };
+		02F25575239E27110001E2EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F25573239E27110001E2EC /* Main.storyboard */; };
+		02F25578239E27110001E2EC /* DDSwiftNetwork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02F25576239E27110001E2EC /* DDSwiftNetwork.xcdatamodeld */; };
+		02F2557A239E27120001E2EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02F25579239E27120001E2EC /* Assets.xcassets */; };
+		02F2557D239E27120001E2EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F2557B239E27120001E2EC /* LaunchScreen.storyboard */; };
+		02F25588239E54130001E2EC /* MoyaProvider+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F25587239E54130001E2EC /* MoyaProvider+Custom.swift */; };
+		2EB3D4432E8E309C114A2893 /* Pods_DDSwiftNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F5644B1982C1D080E064BE /* Pods_DDSwiftNetwork.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02F2556A239E27110001E2EC /* DDSwiftNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDSwiftNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02F2556D239E27110001E2EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		02F2556F239E27110001E2EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		02F25571239E27110001E2EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02F25574239E27110001E2EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		02F25577239E27110001E2EC /* DDSwiftNetwork.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DDSwiftNetwork.xcdatamodel; sourceTree = "<group>"; };
+		02F25579239E27120001E2EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		02F2557C239E27120001E2EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		02F2557E239E27120001E2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02F25587239E54130001E2EC /* MoyaProvider+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Custom.swift"; sourceTree = "<group>"; };
+		78F996564C3D0EE09EBB15EF /* Pods-DDSwiftNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDSwiftNetwork.debug.xcconfig"; path = "Target Support Files/Pods-DDSwiftNetwork/Pods-DDSwiftNetwork.debug.xcconfig"; sourceTree = "<group>"; };
+		D1F5644B1982C1D080E064BE /* Pods_DDSwiftNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DDSwiftNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1C808A1235A77C7BE9CB68C /* Pods-DDSwiftNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDSwiftNetwork.release.xcconfig"; path = "Target Support Files/Pods-DDSwiftNetwork/Pods-DDSwiftNetwork.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		02F25567239E27110001E2EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EB3D4432E8E309C114A2893 /* Pods_DDSwiftNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02F25561239E27110001E2EC = {
+			isa = PBXGroup;
+			children = (
+				02F2556C239E27110001E2EC /* DDSwiftNetwork */,
+				02F2556B239E27110001E2EC /* Products */,
+				9089E64C58D2C6051AD963E2 /* Pods */,
+				288B6F6E2811C04BA3FDDAD9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		02F2556B239E27110001E2EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02F2556A239E27110001E2EC /* DDSwiftNetwork.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02F2556C239E27110001E2EC /* DDSwiftNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				02F25585239E514C0001E2EC /* DDSwiftNetwork */,
+				02F2556D239E27110001E2EC /* AppDelegate.swift */,
+				02F2556F239E27110001E2EC /* SceneDelegate.swift */,
+				02F25571239E27110001E2EC /* ViewController.swift */,
+				02F25573239E27110001E2EC /* Main.storyboard */,
+				02F25579239E27120001E2EC /* Assets.xcassets */,
+				02F2557B239E27120001E2EC /* LaunchScreen.storyboard */,
+				02F2557E239E27120001E2EC /* Info.plist */,
+				02F25576239E27110001E2EC /* DDSwiftNetwork.xcdatamodeld */,
+			);
+			path = DDSwiftNetwork;
+			sourceTree = "<group>";
+		};
+		02F25585239E514C0001E2EC /* DDSwiftNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				02F25587239E54130001E2EC /* MoyaProvider+Custom.swift */,
+			);
+			path = DDSwiftNetwork;
+			sourceTree = "<group>";
+		};
+		288B6F6E2811C04BA3FDDAD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1F5644B1982C1D080E064BE /* Pods_DDSwiftNetwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9089E64C58D2C6051AD963E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78F996564C3D0EE09EBB15EF /* Pods-DDSwiftNetwork.debug.xcconfig */,
+				E1C808A1235A77C7BE9CB68C /* Pods-DDSwiftNetwork.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		02F25569239E27110001E2EC /* DDSwiftNetwork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02F25581239E27120001E2EC /* Build configuration list for PBXNativeTarget "DDSwiftNetwork" */;
+			buildPhases = (
+				68582E65161429A1B9D1FF1E /* [CP] Check Pods Manifest.lock */,
+				02F25566239E27110001E2EC /* Sources */,
+				02F25567239E27110001E2EC /* Frameworks */,
+				02F25568239E27110001E2EC /* Resources */,
+				AD6EB7387E03A0717FCC4FBC /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DDSwiftNetwork;
+			productName = DDSwiftNetwork;
+			productReference = 02F2556A239E27110001E2EC /* DDSwiftNetwork.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02F25562239E27110001E2EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "刘恒";
+				TargetAttributes = {
+					02F25569239E27110001E2EC = {
+						CreatedOnToolsVersion = 11.1;
+					};
+				};
+			};
+			buildConfigurationList = 02F25565239E27110001E2EC /* Build configuration list for PBXProject "DDSwiftNetwork" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 02F25561239E27110001E2EC;
+			productRefGroup = 02F2556B239E27110001E2EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02F25569239E27110001E2EC /* DDSwiftNetwork */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02F25568239E27110001E2EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02F2557D239E27120001E2EC /* LaunchScreen.storyboard in Resources */,
+				02F2557A239E27120001E2EC /* Assets.xcassets in Resources */,
+				02F25575239E27110001E2EC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68582E65161429A1B9D1FF1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DDSwiftNetwork-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD6EB7387E03A0717FCC4FBC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DDSwiftNetwork/Pods-DDSwiftNetwork-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DDSwiftNetwork/Pods-DDSwiftNetwork-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DDSwiftNetwork/Pods-DDSwiftNetwork-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		02F25566239E27110001E2EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02F25572239E27110001E2EC /* ViewController.swift in Sources */,
+				02F2556E239E27110001E2EC /* AppDelegate.swift in Sources */,
+				02F25578239E27110001E2EC /* DDSwiftNetwork.xcdatamodeld in Sources */,
+				02F25588239E54130001E2EC /* MoyaProvider+Custom.swift in Sources */,
+				02F25570239E27110001E2EC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		02F25573239E27110001E2EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02F25574239E27110001E2EC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		02F2557B239E27120001E2EC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02F2557C239E27120001E2EC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		02F2557F239E27120001E2EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		02F25580239E27120001E2EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		02F25582239E27120001E2EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78F996564C3D0EE09EBB15EF /* Pods-DDSwiftNetwork.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DDSwiftNetwork/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "aa-test.DDSwiftNetwork";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		02F25583239E27120001E2EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1C808A1235A77C7BE9CB68C /* Pods-DDSwiftNetwork.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DDSwiftNetwork/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "aa-test.DDSwiftNetwork";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02F25565239E27110001E2EC /* Build configuration list for PBXProject "DDSwiftNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02F2557F239E27120001E2EC /* Debug */,
+				02F25580239E27120001E2EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02F25581239E27120001E2EC /* Build configuration list for PBXNativeTarget "DDSwiftNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02F25582239E27120001E2EC /* Debug */,
+				02F25583239E27120001E2EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		02F25576239E27110001E2EC /* DDSwiftNetwork.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				02F25577239E27110001E2EC /* DDSwiftNetwork.xcdatamodel */,
+			);
+			currentVersion = 02F25577239E27110001E2EC /* DDSwiftNetwork.xcdatamodel */;
+			path = DDSwiftNetwork.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 02F25562239E27110001E2EC /* Project object */;
+}
