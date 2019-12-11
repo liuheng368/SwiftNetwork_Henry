@@ -48,6 +48,10 @@ public final class DDNetworkLoggerPlugin: PluginType {
         NotificationCenter.default.post(name: DDSWIFTNETWORK_REQUEST_LOGGER_KEY, object: strResult)
     }
     
+    
+    /// Response打印
+    /// - Parameter result: <#result description#>
+    /// - Parameter target: <#target description#>
     public func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
         var responseResult : Any
         if case .success(let responses) = result,
@@ -67,6 +71,5 @@ public final class DDNetworkLoggerPlugin: PluginType {
         #endif
         
         NotificationCenter.default.post(name: DDSWIFTNETWORK_RESPONSE_LOGGER_KEY, object: strResult)
-
     }
 }

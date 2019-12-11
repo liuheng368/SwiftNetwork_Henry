@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0221780423A156CE00CA2C24 /* TargetType+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221780323A156CE00CA2C24 /* TargetType+Custom.swift */; };
 		025359C823A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */; };
 		0277108523A0EEA0008221BB /* DDSwiftNetworkDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277108423A0EEA0008221BB /* DDSwiftNetworkDefinition.swift */; };
 		02F2556E239E27110001E2EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2556D239E27110001E2EC /* AppDelegate.swift */; };
@@ -16,11 +17,11 @@
 		02F25578239E27110001E2EC /* DDSwiftNetwork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02F25576239E27110001E2EC /* DDSwiftNetwork.xcdatamodeld */; };
 		02F2557A239E27120001E2EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02F25579239E27120001E2EC /* Assets.xcassets */; };
 		02F2557D239E27120001E2EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F2557B239E27120001E2EC /* LaunchScreen.storyboard */; };
-		02F25588239E54130001E2EC /* MoyaProvider+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F25587239E54130001E2EC /* MoyaProvider+Custom.swift */; };
 		2EB3D4432E8E309C114A2893 /* Pods_DDSwiftNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1F5644B1982C1D080E064BE /* Pods_DDSwiftNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0221780323A156CE00CA2C24 /* TargetType+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TargetType+Custom.swift"; sourceTree = "<group>"; };
 		025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		0277108423A0EEA0008221BB /* DDSwiftNetworkDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDSwiftNetworkDefinition.swift; sourceTree = "<group>"; };
 		02F2556A239E27110001E2EC /* DDSwiftNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDSwiftNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,7 +33,6 @@
 		02F25579239E27120001E2EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02F2557C239E27120001E2EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02F2557E239E27120001E2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		02F25587239E54130001E2EC /* MoyaProvider+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Custom.swift"; sourceTree = "<group>"; };
 		78F996564C3D0EE09EBB15EF /* Pods-DDSwiftNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDSwiftNetwork.debug.xcconfig"; path = "Target Support Files/Pods-DDSwiftNetwork/Pods-DDSwiftNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 		D1F5644B1982C1D080E064BE /* Pods_DDSwiftNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DDSwiftNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C808A1235A77C7BE9CB68C /* Pods-DDSwiftNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDSwiftNetwork.release.xcconfig"; path = "Target Support Files/Pods-DDSwiftNetwork/Pods-DDSwiftNetwork.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 			children = (
 				0277108423A0EEA0008221BB /* DDSwiftNetworkDefinition.swift */,
 				025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */,
-				02F25587239E54130001E2EC /* MoyaProvider+Custom.swift */,
+				0221780323A156CE00CA2C24 /* TargetType+Custom.swift */,
 				02F25589239E59340001E2EC /* tool */,
 			);
 			path = DDSwiftNetwork;
@@ -238,8 +238,8 @@
 				02F25572239E27110001E2EC /* ViewController.swift in Sources */,
 				025359C823A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift in Sources */,
 				02F2556E239E27110001E2EC /* AppDelegate.swift in Sources */,
+				0221780423A156CE00CA2C24 /* TargetType+Custom.swift in Sources */,
 				02F25578239E27110001E2EC /* DDSwiftNetwork.xcdatamodeld in Sources */,
-				02F25588239E54130001E2EC /* MoyaProvider+Custom.swift in Sources */,
 				02F25570239E27110001E2EC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
