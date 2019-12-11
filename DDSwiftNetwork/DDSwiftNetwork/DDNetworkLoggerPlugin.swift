@@ -40,9 +40,11 @@ public final class DDNetworkLoggerPlugin: PluginType {
         Header: \(header)
         Parms: \(parm)]
         """
+        
         #if DEBUG
         print(strResult)
         #endif
+        
         NotificationCenter.default.post(name: DDSWIFTNETWORK_REQUEST_LOGGER_KEY, object: strResult)
     }
     
@@ -59,9 +61,11 @@ public final class DDNetworkLoggerPlugin: PluginType {
         [NetworkLogger:Response
         reslut:\(responseResult)]
         """
+        
         #if DEBUG
         print(strResult)
         #endif
+        
         NotificationCenter.default.post(name: DDSWIFTNETWORK_RESPONSE_LOGGER_KEY, object: strResult)
 
     }
