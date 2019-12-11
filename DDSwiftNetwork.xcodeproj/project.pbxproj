@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		025359C823A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */; };
+		0277108523A0EEA0008221BB /* DDSwiftNetworkDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277108423A0EEA0008221BB /* DDSwiftNetworkDefinition.swift */; };
 		02F2556E239E27110001E2EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2556D239E27110001E2EC /* AppDelegate.swift */; };
 		02F25570239E27110001E2EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2556F239E27110001E2EC /* SceneDelegate.swift */; };
 		02F25572239E27110001E2EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F25571239E27110001E2EC /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetworkLoggerPlugin.swift; sourceTree = "<group>"; };
+		0277108423A0EEA0008221BB /* DDSwiftNetworkDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDSwiftNetworkDefinition.swift; sourceTree = "<group>"; };
 		02F2556A239E27110001E2EC /* DDSwiftNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDSwiftNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F2556D239E27110001E2EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02F2556F239E27110001E2EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 		02F25585239E514C0001E2EC /* DDSwiftNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				0277108423A0EEA0008221BB /* DDSwiftNetworkDefinition.swift */,
+				025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */,
 				02F25587239E54130001E2EC /* MoyaProvider+Custom.swift */,
 				02F25589239E59340001E2EC /* tool */,
 			);
@@ -228,7 +234,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0277108523A0EEA0008221BB /* DDSwiftNetworkDefinition.swift in Sources */,
 				02F25572239E27110001E2EC /* ViewController.swift in Sources */,
+				025359C823A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift in Sources */,
 				02F2556E239E27110001E2EC /* AppDelegate.swift in Sources */,
 				02F25578239E27110001E2EC /* DDSwiftNetwork.xcdatamodeld in Sources */,
 				02F25588239E54130001E2EC /* MoyaProvider+Custom.swift in Sources */,
