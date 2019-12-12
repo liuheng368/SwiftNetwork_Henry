@@ -1,5 +1,5 @@
 //
-//  CommonMethod.swift
+//  CommonTools.swift
 //  DDSwiftNetwork
 //
 //  Created by Henry on 2019/12/12.
@@ -11,7 +11,7 @@ import Moya
 
 /// 白名单中是否包含该targetType
 /// - Parameter target: <#target description#>
-public func isWhiteList(_ target:TargetType) -> Bool {
+func isWhiteList(_ target:TargetType) -> Bool {
     guard let _ = target.whiteList.firstIndex(of: target.path) else {
         return false
     }

@@ -28,7 +28,7 @@ public final class DDNetworkLoggerPlugin: PluginType {
         Method: \(target.method)
         URL: \(target.baseURL)\(target.path)
         Header: \(header)
-        Parms: \(requestParm(target))]
+        Params: \(requestParam(target))]
         """
         
         #if DEBUG
@@ -53,7 +53,7 @@ public final class DDNetworkLoggerPlugin: PluginType {
                 responseResult = "Received error/empty response data for\n \(target.baseURL)\(target.path)"
             }
         }else if case .failure(let error) = result{
-            responseResult = "Received error network response for\n \(target.baseURL)\(target.path)\nErrorCode:\(error.errorCode)\nRequest:\(requestParm(target))"
+            responseResult = "Received error network response for\n \(target.baseURL)\(target.path)\nErrorCode:\(error.errorCode)\nRequest:\(requestParam(target))"
         }
         
         let strResult =
@@ -71,19 +71,19 @@ public final class DDNetworkLoggerPlugin: PluginType {
     
     /// 请求参数格式化
     /// - Parameter target: <#target description#>
-    private func requestParm(_ target:TargetType) -> String {
-        var parm : String
+    private func requestParam(_ target:TargetType) -> String {
+        var param : String
         switch target.task {
         case .requestPlain:
-            parm = target.path
+            param = target.path
         case .requestParameters(parameters: let dic, encoding: _):
-            parm = dic.reduce("[", {"\($0)'\($1.key)'='\($1.value)', "}) + "]"
+            param = dic.reduce("[", {"\($0)'\($1.key)'='\($1.value)', "}) + "]"
         case .requestCompositeData(bodyData: let data, urlParameters: let dic):
-            parm = dic.reduce("[", {"\($0)'\($1.key)'='\($1.value)', "}) + "]" + "\nbody: \(String(data: data, encoding: .utf8) ?? "(invalid request)")"
+            param = dic.reduce("[", {"\($0)'\($1.key)'='\($1.value)', "}) + "]" + "\nbody: \(String(data: data, encoding: .utf8) ?? "(invalid request)")"
         default:
-            parm = "\(target.task)"
+            param = "\(target.task)"
         }
-        return parm
+        return param
     }
     
     

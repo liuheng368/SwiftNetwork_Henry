@@ -27,8 +27,9 @@ public final class DDNetworkActivityPlugin: PluginType {
             svHUDFormat()
             SVProgressHUD.popActivity()
         }else if case .failure(let error) = result{
-            SVProgressHUD.showError(withStatus:
-                cuteMessageWithErrorCode(error.errorCode))
+            if let strError = cuteMessageWithErrorCode(error.errorCode) {
+                SVProgressHUD.showError(withStatus:strError)
+            }
         }
     }
     
@@ -41,9 +42,10 @@ public final class DDNetworkActivityPlugin: PluginType {
     
     /// 将错误码转为 #萌萌哒#版本
     /// debug下展示错误真实描述
+    /// 未知情况不弹框提示
     /// - Parameter errCode: <#errCode description#>
-    private func cuteMessageWithErrorCode(_ errCode:Int) -> String {
-        var errorMessage : String
+    private func cuteMessageWithErrorCode(_ errCode:Int) -> String? {
+        var errorMessage : String?
 #if DEBUG
         switch (errCode) {
         case 300:
@@ -106,10 +108,11 @@ public final class DDNetworkActivityPlugin: PluginType {
             errorMessage = "服务器作为网关或代理，但是没有及时从上游服务器收到请求"
         case 505:
             errorMessage = "服务器不支持请求中所用的 HTTP 协议版本"
-        default:
-            errorMessage = "还没有映射的code"
-    }
-        return "\(errorMessage) : \(errCode)"
+        default:break
+        }
+        if let errorMessage = errorMessage{
+            return "\(errorMessage) : \(errCode)"
+        }
 #else
         switch (errCode) {
         case 500:
@@ -124,9 +127,8 @@ public final class DDNetworkActivityPlugin: PluginType {
             return "服务器饿晕了, 工程师正在解救\(errCode)"
         case 400..<500:
             return "打开服务器的方式不对\(errCode),调整一下？"
-        default:
-            return "未知错误:\(errCode)"
         }
 #endif
+        return nil
     }
 }

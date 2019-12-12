@@ -28,10 +28,5 @@ extension TargetType {
     var HUDString : String {
         return ""
     }
-    
-    /// 是否是伪登录
-    var bLmitate : Bool {
-        return false
-    }
 }
 

@@ -17,7 +17,9 @@ public final class DDNetWorkTimeOutPlugin: PluginType {
     /// - Parameter target: <#target description#>
     public func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
         var timeOutRequest = request
-        timeOutRequest.timeoutInterval = TimeInterval(target.timeOut)
+        if target.timeOut > 0 {
+            timeOutRequest.timeoutInterval = TimeInterval(target.timeOut)
+        }
         return timeOutRequest
     }
 }
