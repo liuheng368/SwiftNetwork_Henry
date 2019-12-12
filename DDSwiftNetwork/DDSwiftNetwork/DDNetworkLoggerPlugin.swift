@@ -54,8 +54,6 @@ public final class DDNetworkLoggerPlugin: PluginType {
             }
         }else if case .failure(let error) = result{
             responseResult = "Received error network response for\n \(target.baseURL)\(target.path)\nErrorCode:\(error.errorCode)\nRequest:\(requestParm(target))"
-        }else{
-            responseResult = "Response UnKnow state"
         }
         
         let strResult =

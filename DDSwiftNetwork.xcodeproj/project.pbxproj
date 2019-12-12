@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0221780423A156CE00CA2C24 /* TargetType+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221780323A156CE00CA2C24 /* TargetType+Custom.swift */; };
 		0221780623A159F800CA2C24 /* CommonMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221780523A159F800CA2C24 /* CommonMethod.swift */; };
+		0221780823A1E67E00CA2C24 /* DDNetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221780723A1E67E00CA2C24 /* DDNetworkActivityPlugin.swift */; };
+		0221780A23A224DC00CA2C24 /* DDNetWorkTimeOutPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221780923A224DC00CA2C24 /* DDNetWorkTimeOutPlugin.swift */; };
 		025359C823A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */; };
 		0277108523A0EEA0008221BB /* DDSwiftNetworkDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277108423A0EEA0008221BB /* DDSwiftNetworkDefinition.swift */; };
 		02F2556E239E27110001E2EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2556D239E27110001E2EC /* AppDelegate.swift */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		0221780323A156CE00CA2C24 /* TargetType+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TargetType+Custom.swift"; sourceTree = "<group>"; };
 		0221780523A159F800CA2C24 /* CommonMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMethod.swift; sourceTree = "<group>"; };
+		0221780723A1E67E00CA2C24 /* DDNetworkActivityPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetworkActivityPlugin.swift; sourceTree = "<group>"; };
+		0221780923A224DC00CA2C24 /* DDNetWorkTimeOutPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetWorkTimeOutPlugin.swift; sourceTree = "<group>"; };
 		025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		0277108423A0EEA0008221BB /* DDSwiftNetworkDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDSwiftNetworkDefinition.swift; sourceTree = "<group>"; };
 		02F2556A239E27110001E2EC /* DDSwiftNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDSwiftNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,8 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				0277108423A0EEA0008221BB /* DDSwiftNetworkDefinition.swift */,
-				025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */,
 				0221780323A156CE00CA2C24 /* TargetType+Custom.swift */,
+				025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */,
+				0221780723A1E67E00CA2C24 /* DDNetworkActivityPlugin.swift */,
+				0221780923A224DC00CA2C24 /* DDNetWorkTimeOutPlugin.swift */,
 				02F25589239E59340001E2EC /* tool */,
 			);
 			path = DDSwiftNetwork;
@@ -242,7 +248,9 @@
 				025359C823A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift in Sources */,
 				02F2556E239E27110001E2EC /* AppDelegate.swift in Sources */,
 				0221780423A156CE00CA2C24 /* TargetType+Custom.swift in Sources */,
+				0221780823A1E67E00CA2C24 /* DDNetworkActivityPlugin.swift in Sources */,
 				02F25578239E27110001E2EC /* DDSwiftNetwork.xcdatamodeld in Sources */,
+				0221780A23A224DC00CA2C24 /* DDNetWorkTimeOutPlugin.swift in Sources */,
 				02F25570239E27110001E2EC /* SceneDelegate.swift in Sources */,
 				0221780623A159F800CA2C24 /* CommonMethod.swift in Sources */,
 			);

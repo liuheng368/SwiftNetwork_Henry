@@ -19,12 +19,13 @@ extension TargetType {
     
     /// 请求超时定义
     var timeOut : Int {
-        return 30
+        return 60
     }
     
     /// 请求弹框文案展示
     /// tips:图片上传不在此控制
-    var toastString : String {
+    /// tips:不设置该字段则不会展示HUD
+    var HUDString : String {
         return ""
     }
 }
