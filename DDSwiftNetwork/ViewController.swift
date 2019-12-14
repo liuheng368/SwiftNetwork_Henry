@@ -22,6 +22,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        func JSONEncoderForParam()throws -> [String:Any] {
+            throw DDNetworkError.encodeFormatFailed
+        }
+        do {
+            try JSONEncoderForParam()
+        } catch {
+            print(error.localizedDescription)
+        }
+         
+        
+        
+        
         let obj = ddsd()
         let encoder = JSONEncoder()
         let data = try? encoder.encode(obj)
@@ -61,3 +73,4 @@ struct ddsd : Codable {
     var b:Int = 232
     var c:Bool = false
 }
+

@@ -10,6 +10,19 @@ import Foundation
 import Moya
 import Result
 
+public enum DDNetworkLoggerNotifi {
+    case request, response
+    
+    var name : NSNotification.Name {
+        switch self {
+        case .request:
+            return NSNotification.Name("DDSwiftNetworkRequestLogger")
+        case .response:
+            return NSNotification.Name("DDSwiftNetworkResponseLogger")
+        }
+    }
+}
+
 public final class DDNetworkLoggerPlugin: PluginType {
     
     /// Request-打印
@@ -35,7 +48,7 @@ public final class DDNetworkLoggerPlugin: PluginType {
         print(strResult)
         #endif
         
-        NotificationCenter.default.post(name: DDSWIFTNETWORK_REQUEST_LOGGER_KEY, object: strResult)
+        NotificationCenter.default.post(name: DDNetworkLoggerNotifi.request.name, object: strResult)
     }
     
     
@@ -66,7 +79,7 @@ public final class DDNetworkLoggerPlugin: PluginType {
         print(strResult)
         #endif
         
-        NotificationCenter.default.post(name: DDSWIFTNETWORK_RESPONSE_LOGGER_KEY, object: strResult)
+        NotificationCenter.default.post(name: DDNetworkLoggerNotifi.response.name, object: strResult)
     }
     
     /// 请求参数格式化

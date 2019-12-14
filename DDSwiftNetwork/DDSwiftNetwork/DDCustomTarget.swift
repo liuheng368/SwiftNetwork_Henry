@@ -9,6 +9,8 @@
 import Foundation
 import Moya
 
+
+/// 请求主体
 public enum DDCustomTarget: TargetType {
     case target(DDTargetType)
 
@@ -52,22 +54,22 @@ public enum DDCustomTarget: TargetType {
         case .getRequestParam(parameters: let urlParameters):
             return .requestParameters(parameters: urlParameters, encoding: URLEncoding.default)
         case .getRequestEncodable(let encodable):
-            if let dic = JSONEncoderForParam(encodable){
-                return .requestParameters(parameters: dic, encoding: URLEncoding.default)
-            }else{
+            do {
+                return .requestParameters(parameters: try JSONEncoderForParam(encodable), encoding: URLEncoding.default)
+            } catch {
                 #if DEBUG
-                print("[NetworkLogger:getRequestEncodable failed encoder]")
+                print("\(error.localizedDescription)")
                 #endif
                 return .requestParameters(parameters: [:], encoding: URLEncoding.default)
             }
         case .postRequestParam(let bodyParameters, let urlParameters):
             return .requestCompositeParameters(bodyParameters: bodyParameters, bodyEncoding: URLEncoding.httpBody, urlParameters: urlParameters)
         case .postRequestEncodable(let bodyParameters, let urlEncodable):
-            if let dic = JSONEncoderForParam(urlEncodable){
-                return .requestCompositeParameters(bodyParameters: bodyParameters, bodyEncoding: URLEncoding.httpBody, urlParameters: dic)
-            }else{
+            do {
+                return .requestCompositeParameters(bodyParameters: bodyParameters, bodyEncoding: URLEncoding.httpBody, urlParameters: try JSONEncoderForParam(urlEncodable))
+            } catch {
                 #if DEBUG
-                print("[NetworkLogger:postRequestEncodable failed encoder]")
+                print("\(error.localizedDescription)")
                 #endif
                 return .requestCompositeParameters(bodyParameters: bodyParameters, bodyEncoding: URLEncoding.httpBody, urlParameters: [:])
             }
@@ -80,29 +82,60 @@ public enum DDCustomTarget: TargetType {
 
     /// The headers of the embedded target.
     public var headers: [String: String]? {
-        target.task
-        return target.headers
+        var strEncode = ""
+        switch target.task {
+        case .getRequestParam(parameters: let dic),
+             .postRequestParam(bodyParameters: _, urlParameters: let dic),
+             .downloadParameters(parameters: let dic, encoding: _, destination: _),
+             .uploadCompositeMultipart(sd: _, urlParameters: let dic):
+            strEncode = DDParamEscape(dic).escape()
+        case .getRequestEncodable(let encodable),
+             .postRequestEncodable(bodyParameters: _, urlEncodable: let encodable):
+            do {
+                strEncode = DDParamEscape(try JSONEncoderForParam(encodable)).escape()
+            } catch {
+                #if DEBUG
+                print("\(error.localizedDescription)")
+                #endif
+            }
+        }
+        guard var header = target.headers else {
+            return ["":""]
+        }
+        if target.bLmitate {
+            header["Verification-Hash"] = "Alan.P"
+        }else{
+            header["Verification-Hash"] = "\(strEncode)Athens".MD5()
+        }
+        return header
     }
 
     /// The sampleData of the embedded target.
     public var sampleData: Data {
         return "{}".data(using: String.Encoding.utf8)!
     }
-    
+}
+
+fileprivate extension DDCustomTarget {
     /// 将Encodable转换为[String:Any]
     /// - Parameter urlEncodable: <#urlEncodable description#>
-    private func JSONEncoderForParam(_ urlEncodable: Encodable) -> [String:Any]? {
-        let encodable = AnyEncodable(urlEncodable)
-        if let data = try? JSONEncoder().encode(encodable),
-            let anyObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments){
-            return anyObj as? [String:Any]
-        }else{
-            return nil
+    func JSONEncoderForParam(_ urlEncodable: Encodable)throws -> [String:Any] {
+        do {
+            let encodable = AnyEncodable(urlEncodable)
+            let data = try JSONEncoder().encode(encodable)
+            let anyObj = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            if let _param = anyObj as? [String:Any]{
+                return _param
+            }else{
+                throw DDNetworkError.encodeFormatFailed
+            }
+        } catch {
+            throw DDNetworkError.encodingFailed(error: error)
         }
     }
 
     /// 将Encodable转为具体类型，否则无法用于解析
-    private struct AnyEncodable: Encodable {
+    struct AnyEncodable: Encodable {
         private let encodable: Encodable
         public init(_ encodable: Encodable) {
             self.encodable = encodable
@@ -112,4 +145,3 @@ public enum DDCustomTarget: TargetType {
         }
     }
 }
-
