@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		020FBE4A23A3A4B500E033C1 /* DDParamEscape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020FBE4923A3A4B500E033C1 /* DDParamEscape.swift */; };
 		020FBE4C23A4AC1E00E033C1 /* DDNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020FBE4B23A4AC1E00E033C1 /* DDNetworkError.swift */; };
+		020FBE4E23A4DC1900E033C1 /* DDNetworkLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020FBE4D23A4DC1900E033C1 /* DDNetworkLinkManager.swift */; };
 		0221780423A156CE00CA2C24 /* TargetType+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221780323A156CE00CA2C24 /* TargetType+Custom.swift */; };
 		0221780623A159F800CA2C24 /* CommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221780523A159F800CA2C24 /* CommonTools.swift */; };
 		0221780823A1E67E00CA2C24 /* DDNetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221780723A1E67E00CA2C24 /* DDNetworkActivityPlugin.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		020FBE4923A3A4B500E033C1 /* DDParamEscape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDParamEscape.swift; sourceTree = "<group>"; };
 		020FBE4B23A4AC1E00E033C1 /* DDNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetworkError.swift; sourceTree = "<group>"; };
+		020FBE4D23A4DC1900E033C1 /* DDNetworkLinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetworkLinkManager.swift; sourceTree = "<group>"; };
 		0221780323A156CE00CA2C24 /* TargetType+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TargetType+Custom.swift"; sourceTree = "<group>"; };
 		0221780523A159F800CA2C24 /* CommonTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTools.swift; sourceTree = "<group>"; };
 		0221780723A1E67E00CA2C24 /* DDNetworkActivityPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetworkActivityPlugin.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		02F25585239E514C0001E2EC /* DDSwiftNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				020FBE4D23A4DC1900E033C1 /* DDNetworkLinkManager.swift */,
 				020FBE4B23A4AC1E00E033C1 /* DDNetworkError.swift */,
 				0221780323A156CE00CA2C24 /* TargetType+Custom.swift */,
 				025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */,
@@ -266,6 +269,7 @@
 				020FBE4A23A3A4B500E033C1 /* DDParamEscape.swift in Sources */,
 				02F25578239E27110001E2EC /* DDSwiftNetwork.xcdatamodeld in Sources */,
 				0221780A23A224DC00CA2C24 /* DDNetWorkTimeOutPlugin.swift in Sources */,
+				020FBE4E23A4DC1900E033C1 /* DDNetworkLinkManager.swift in Sources */,
 				0221781023A249F200CA2C24 /* bdSupTArget.swift in Sources */,
 				02F25570239E27110001E2EC /* SceneDelegate.swift in Sources */,
 				0221780623A159F800CA2C24 /* CommonTools.swift in Sources */,

@@ -8,9 +8,17 @@
 
 import UIKit
 import Moya
-
+import RxSwift
 func createTarget(_ t : BDTargetType) -> DDCustomTarget {
     return DDCustomTarget(BDCustomTarget(t))
+}
+
+extension ViewController {
+    func networkStatus() {
+        DDNetworkLinkManager.shared.state().drive(onNext: { (status,firstLink) in
+            print(status,firstLink)
+        }).disposed(by: disposeBag)
+    }
 }
 
 class ViewController: UIViewController {
@@ -18,9 +26,10 @@ class ViewController: UIViewController {
     let p = MoyaProvider<DDCustomTarget>(plugins: [DDNetworkLoggerPlugin(),
                                                    DDNetworkActivityPlugin(),
                                                    DDNetWorkTimeOutPlugin()])
-    
+    let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
+        networkStatus()
         
         func JSONEncoderForParam()throws -> [String:Any] {
             throw DDNetworkError.encodeFormatFailed
@@ -30,9 +39,6 @@ class ViewController: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
-         
-        
-        
         
         let obj = ddsd()
         let encoder = JSONEncoder()
@@ -41,7 +47,7 @@ class ViewController: UIViewController {
         if let dic = a as? [String:Any]{
             print(dic)
         }
-        
+
         p.request(createTarget(dd.ffff("sd")), completion: { result in
             switch result {
             case let .success(response):break
@@ -64,6 +70,8 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    
     
 }
 

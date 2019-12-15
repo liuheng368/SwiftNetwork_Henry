@@ -9,6 +9,8 @@
 import Foundation
 import Moya
 
+
+/// Request参数体
 public protocol DDTargetType {
 
     /// 根路径
