@@ -9,35 +9,28 @@
 import Foundation
 import Moya
 import Result
-import SVProgressHUD
+import MBProgressHUD
 
 public final class DDNetworkActivityPlugin: PluginType {
+    
+    fileprivate var hud : MBProgressHUD?
     
     public func willSend(_ request: RequestType, target: TargetType) {
         if isWhiteList(target) {return}
         if target.HUDString.count <= 0 {return}
-        svHUDFormat()
-        SVProgressHUD.show(withStatus: target.HUDString)
+        hud = DDShowHUD.determinate(title: target.HUDString).show()
     }
 
     /// Called by the provider as soon as a response arrives, even if the request is canceled.
     public func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType) {
         if isWhiteList(target) {return}
         if case .success(_) = result {
-            svHUDFormat()
-            SVProgressHUD.popActivity()
+            hud?.hide(animated: true)
         }else if case .failure(let error) = result{
             if let strError = cuteMessageWithErrorCode(error.errorCode) {
-                SVProgressHUD.showError(withStatus:strError)
+                DDShowHUD.error(title: strError, duration: 2).show()
             }
         }
-    }
-    
-    /// SVProgressHUD是个单例，所以使用前需格式化样式
-    private func svHUDFormat() {
-        SVProgressHUD.setDefaultStyle(.light)
-        SVProgressHUD.setDefaultAnimationType(.flat)
-        SVProgressHUD.setDefaultMaskType(.clear)
     }
     
     /// 将错误码转为 #萌萌哒#版本

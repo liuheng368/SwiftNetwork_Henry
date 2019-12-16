@@ -10,7 +10,7 @@ target 'DDSwiftNetwork' do
      pod 'Alamofire'
      pod 'Moya'
      pod 'CleanJSON'
-     pod 'SVProgressHUD'
+     pod 'MBProgressHUD'
      pod 'Kingfisher’
      pod 'MLeaksFinder'
 end

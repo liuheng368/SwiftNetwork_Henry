@@ -36,7 +36,7 @@ public enum BDCustomTarget: DDTargetType {
 
     /// The baseURL of the embedded target.
     public var baseURL: URL {
-        return URL(fileURLWithPath: "")
+        return URL(fileURLWithPath: "https://www.douban.com")
     }
 
     /// The `Task` of the embedded target.

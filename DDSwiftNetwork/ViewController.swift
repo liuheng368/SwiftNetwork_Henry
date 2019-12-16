@@ -9,27 +9,49 @@
 import UIKit
 import Moya
 import RxSwift
+import MBProgressHUD
+
 func createTarget(_ t : BDTargetType) -> DDCustomTarget {
     return DDCustomTarget(BDCustomTarget(t))
 }
 
 extension ViewController {
     func networkStatus() {
-        DDNetworkLinkManager.shared.state().drive(onNext: { (status,firstLink) in
-            print(status,firstLink)
-        }).disposed(by: disposeBag)
+        DDNetworkLinkManager.shared.state()
+            .drive(onNext: { (status,firstLink) in
+                print(status,firstLink)
+            }).disposed(by: disposeBag)
     }
 }
 
+
 class ViewController: UIViewController {
 
-    let p = MoyaProvider<DDCustomTarget>(plugins: [DDNetworkLoggerPlugin(),
-                                                   DDNetworkActivityPlugin(),
-                                                   DDNetWorkTimeOutPlugin()])
+    let aad = DDMoyaProvider<BDCustomTarget>()
+    
+    
+//    let p = MoyaProvider<DDCustomTarget>(plugins: [DDNetworkLoggerPlugin(),
+//                                                   DDNetworkActivityPlugin(),
+//                                                   DDNetWorkTimeOutPlugin()])
     let disposeBag = DisposeBag()
+    
+    
+    
+    @objc func asd() {
+        print("ghjkl")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let btn = UIButton(frame: CGRect(x: 100, y: 100, width: 200, height: 200))
+        btn.setTitle("sdsd", for: .normal)
+        btn.backgroundColor = UIColor.black
+        btn.addTarget(self, action: #selector(asd), for: .allEvents)
+        self.view.addSubview(btn)
+        
         networkStatus()
+        self.view.backgroundColor = UIColor.systemRed
+
+//        DDShowHUD.error(title: "sdakdjalkdjlkajdklasjdklajdlkajdlkajdlk", duration: 1000).show()
         
         func JSONEncoderForParam()throws -> [String:Any] {
             throw DDNetworkError.encodeFormatFailed
@@ -47,13 +69,13 @@ class ViewController: UIViewController {
         if let dic = a as? [String:Any]{
             print(dic)
         }
-
-        p.request(createTarget(dd.ffff("sd")), completion: { result in
-            switch result {
-            case let .success(response):break
-            case let .failure(error):break
-            }
-        })
+        
+//        aad.request(createTarget(dd.ffff("sd")), completion: { result in
+//            switch result {
+//            case let .success(response):break
+//            case let .failure(error):break
+//            }
+//        })
     }
     
 
@@ -62,7 +84,7 @@ class ViewController: UIViewController {
         case ffff(_ ff:String)
         
         var path: String {
-            return ""
+            return "/j/app/radio/channels"
         }
         
         var task: DDTask {
@@ -71,7 +93,10 @@ class ViewController: UIViewController {
         
     }
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        
+    }
     
 }
 
@@ -81,4 +106,3 @@ struct ddsd : Codable {
     var b:Int = 232
     var c:Bool = false
 }
-

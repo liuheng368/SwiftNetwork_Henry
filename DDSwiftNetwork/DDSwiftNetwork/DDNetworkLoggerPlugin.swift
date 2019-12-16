@@ -66,7 +66,7 @@ public final class DDNetworkLoggerPlugin: PluginType {
                 responseResult = "Received error/empty response data for\n \(target.baseURL)\(target.path)"
             }
         }else if case .failure(let error) = result{
-            responseResult = "Received error network response for\n \(target.baseURL)\(target.path)\nErrorCode:\(error.errorCode)\nRequest:\(requestParam(target))"
+            responseResult = "Received error network response for \(target.baseURL)\(target.path)\nErrorCode:\(error.errorCode)\nRequest:\(requestParam(target))"
         }
         
         let strResult =
