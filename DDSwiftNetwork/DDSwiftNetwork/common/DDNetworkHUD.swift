@@ -5,10 +5,19 @@
 //  Created by Henry on 2019/12/16.
 //  Copyright © 2019 刘恒. All rights reserved.
 //
-// tips:谁使用谁控制的原则，故没有全局的隐藏方法-MRC
+// tips:本着谁使用谁控制的原则，故没有全局的隐藏方法-MRC
 
 import Foundation
 import MBProgressHUD
+
+extension MBProgressHUD {
+    public func hideInMainThread(_ animated : Bool = true ) {
+        DispatchQueue.main.async {[weak self] in
+            guard let `self` = self else{return}
+            self.hide(animated: animated)
+        }
+    }
+}
 
 /// HUD弹框
 public enum DDShowHUD {
@@ -20,7 +29,7 @@ public enum DDShowHUD {
     case determinate(title: String = "")
     
     /// 获取当前HUD的类型
-    public var getShowHUD : DDShowHUD {
+    public var getShowHUDType : DDShowHUD {
         return self
     }
     

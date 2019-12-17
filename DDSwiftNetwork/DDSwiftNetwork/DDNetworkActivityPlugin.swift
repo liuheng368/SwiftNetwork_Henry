@@ -25,7 +25,7 @@ public final class DDNetworkActivityPlugin: PluginType {
     public func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType) {
         if isWhiteList(target) {return}
         if case .success(_) = result {
-            hud?.hide(animated: true)
+            hud?.hideInMainThread()
         }else if case .failure(let error) = result{
             if let strError = cuteMessageWithErrorCode(error.errorCode) {
                 DDShowHUD.error(title: strError, duration: 2).show()
