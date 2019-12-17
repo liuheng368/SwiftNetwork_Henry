@@ -49,7 +49,7 @@ class ViewController: UIViewController {
 //        DDShowHUD.error(title: "sdakdjalkdjlkajdklasjdklajdlkajdlkajdlk", duration: 1000).show()
         
         func JSONEncoderForParam()throws -> [String:Any] {
-            throw DDNetworkError.encodeFormatFailed
+            throw DDNetworkError.encodeFormat
         }
         do {
             try JSONEncoderForParam()

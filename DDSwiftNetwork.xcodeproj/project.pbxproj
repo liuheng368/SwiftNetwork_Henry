@@ -129,6 +129,7 @@
 				0221780323A156CE00CA2C24 /* TargetTypeExtension.swift */,
 				0221781123A2511600CA2C24 /* DDCustomTarget.swift */,
 				0221780D23A23D5E00CA2C24 /* DDTargetType.swift */,
+				02547DC523A781B400091B01 /* DDNetworkHUD.swift */,
 				02F25589239E59340001E2EC /* common */,
 			);
 			path = DDSwiftNetwork;
@@ -139,7 +140,6 @@
 			children = (
 				0221780523A159F800CA2C24 /* CommonTools.swift */,
 				020FBE4923A3A4B500E033C1 /* DDParamEscape.swift */,
-				02547DC523A781B400091B01 /* DDNetworkHUD.swift */,
 				0250F11723A7EFDD00C0DC4F /* DDNetworkHudImage.bundle */,
 			);
 			path = common;

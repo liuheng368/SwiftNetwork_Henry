@@ -29,8 +29,18 @@ extension BDTargetType {
 }
 
 public enum BDCustomTarget: DDTargetType {
+    /// The embedded `TargetType`.
+    case target(BDTargetType)
+    
     public init(_ target: BDTargetType) {
         self = BDCustomTarget.target(target)
+    }
+    
+    /// The embedded `TargetType`.
+    public var target: BDTargetType {
+        switch self {
+        case .target(let target): return target
+        }
     }
     
     public var whiteList: [String] {
@@ -40,11 +50,6 @@ public enum BDCustomTarget: DDTargetType {
     public var timeOut: Int {
         return 30
     }
-    
-    /// The embedded `TargetType`.
-    case target(BDTargetType)
-
-    /// Initializes a `MultiTarget`.
     
 
     /// The embedded target's base `URL`.
@@ -69,13 +74,6 @@ public enum BDCustomTarget: DDTargetType {
     /// The headers of the embedded target.
     public var headers: [String: String]? {
         return [:]
-    }
-
-    /// The embedded `TargetType`.
-    public var target: BDTargetType {
-        switch self {
-        case .target(let target): return target
-        }
     }
     
     public var bLmitate: Bool {

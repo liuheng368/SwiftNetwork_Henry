@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-/// 转换为Moya协议
+/// DDTargetType转换为TargetTypeExtension协议
 public enum DDCustomTarget: TargetTypeExtension {
     
     public init(_ target: DDTargetType) {
@@ -139,10 +139,10 @@ fileprivate extension DDCustomTarget {
             if let _param = anyObj as? [String:Any]{
                 return _param
             }else{
-                throw DDNetworkError.encodeFormatFailed
+                throw DDNetworkError.encodeFormat
             }
         } catch {
-            throw DDNetworkError.encodingFailed(error: error)
+            throw DDNetworkError.encoding(error: error)
         }
     }
 

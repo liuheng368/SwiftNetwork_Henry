@@ -26,8 +26,20 @@ public final class DDNetworkActivityPlugin: PluginType {
     /// Called by the provider as soon as a response arrives, even if the request is canceled.
     public func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType) {
         if isWhiteList(target) {return}
-        if case .success(_) = result {
-            hud?.hideInMainThread()
+        hud?.hideInMainThread()
+        if case .success(let response) = result {
+            do {
+                _ = try response.filterSuccessfulStatusCodes()
+            } catch {
+                do {
+                    if let dic = try response.mapJSON() as? [String:Any],
+                        let strError = dic["errorMsg"] as? String {
+                        DDShowHUD.error(title: strError, duration: 2).show()
+                    }else{DDShowHUD.error(title: "请求错误", duration: 2).show()}
+                } catch {
+                    DDShowHUD.error(title: "请求错误", duration: 2).show()
+                }
+            }
         }else if case .failure(let error) = result{
             if let strError = cuteMessageWithErrorCode(error.errorCode) {
                 DDShowHUD.error(title: strError, duration: 2).show()
