@@ -17,8 +17,10 @@ public final class DDNetworkActivityPlugin: PluginType {
     
     public func willSend(_ request: RequestType, target: TargetType) {
         if isWhiteList(target) {return}
-        if target.HUDString.count <= 0 {return}
-        hud = DDShowHUD.determinate(title: target.HUDString).show()
+        if let target = target.typeExtension{
+            if target.HUDString.count <= 0 {return}
+            hud = DDShowHUD.progress(title: target.HUDString).show()
+        }
     }
 
     /// Called by the provider as soon as a response arrives, even if the request is canceled.

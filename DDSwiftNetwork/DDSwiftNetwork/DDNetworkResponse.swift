@@ -14,7 +14,6 @@ import Moya
 class DDMoyaProvider<Target: DDTargetType>: MoyaProvider<DDCustomTarget> {
     /// 请求发起者初始化
     init() {
-        
         super.init(plugins: [DDNetworkLoggerPlugin(),
                              DDNetworkActivityPlugin(),
                              DDNetWorkTimeOutPlugin()])

@@ -27,6 +27,15 @@ public protocol DDTargetType {
 
     /// 是否是伪登录
     var bLmitate : Bool { get }
+    
+    /// 请求弹框文案
+    var HUDString : String { get }
+    
+    /// 白名单
+    var whiteList : [String] { get }
+    
+    /// 请求超时定义
+    var timeOut : Int { get }
 }
 
 public enum DDTask {

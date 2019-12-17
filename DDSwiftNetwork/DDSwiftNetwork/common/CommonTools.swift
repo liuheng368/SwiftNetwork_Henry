@@ -13,6 +13,9 @@ import CommonCrypto
 /// 白名单中是否包含该targetType
 /// - Parameter target: <#target description#>
 func isWhiteList(_ target:TargetType) -> Bool {
+    guard let target = target.typeExtension else{
+        return false
+    }
     guard let _ = target.whiteList.firstIndex(of: target.path) else {
         return false
     }

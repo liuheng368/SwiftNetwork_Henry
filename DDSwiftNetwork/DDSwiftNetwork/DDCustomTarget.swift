@@ -9,19 +9,19 @@
 import Foundation
 import Moya
 
-
-/// 请求主体
-public enum DDCustomTarget: TargetType {
+/// 转换为Moya协议
+public enum DDCustomTarget: TargetTypeExtension {
+    
+    public init(_ target: DDTargetType) {
+        self = DDCustomTarget.target(target)
+    }
+    
     case target(DDTargetType)
 
     public var target: DDTargetType {
         switch self {
         case .target(let target): return target
         }
-    }
-    
-    public init(_ target: DDTargetType) {
-        self = DDCustomTarget.target(target)
     }
 
     /// The embedded target's base `URL`.
@@ -32,6 +32,18 @@ public enum DDCustomTarget: TargetType {
     /// The baseURL of the embedded target.
     public var baseURL: URL {
         return target.baseURL
+    }
+    
+    public var whiteList: [String] {
+        return target.whiteList
+    }
+    
+    public var timeOut: Int {
+        return target.timeOut
+    }
+    
+    public var HUDString : String {
+        return target.HUDString
     }
 
     /// The HTTP method of the embedded target.

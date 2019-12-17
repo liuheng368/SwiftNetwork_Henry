@@ -17,21 +17,43 @@ public protocol BDTargetType {
 
     /// 请求体
     var task: DDTask { get }
+    
+    /// 请求弹框文案
+    var HUDString : String { get }
+}
+
+extension BDTargetType {
+    var HUDString: String {
+        return "sdsd"
+    }
 }
 
 public enum BDCustomTarget: DDTargetType {
+    public init(_ target: BDTargetType) {
+        self = BDCustomTarget.target(target)
+    }
+    
+    public var whiteList: [String] {
+        return []
+    }
+    
+    public var timeOut: Int {
+        return 30
+    }
     
     /// The embedded `TargetType`.
     case target(BDTargetType)
 
     /// Initializes a `MultiTarget`.
-    public init(_ target: BDTargetType) {
-        self = BDCustomTarget.target(target)
-    }
+    
 
     /// The embedded target's base `URL`.
     public var path: String {
         return target.path
+    }
+    
+    public var HUDString: String {
+        return target.HUDString
     }
 
     /// The baseURL of the embedded target.

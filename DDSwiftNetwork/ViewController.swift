@@ -28,11 +28,6 @@ extension ViewController {
 class ViewController: UIViewController {
 
     let aad = DDMoyaProvider<BDCustomTarget>()
-    
-    
-//    let p = MoyaProvider<DDCustomTarget>(plugins: [DDNetworkLoggerPlugin(),
-//                                                   DDNetworkActivityPlugin(),
-//                                                   DDNetWorkTimeOutPlugin()])
     let disposeBag = DisposeBag()
     
     
@@ -70,17 +65,18 @@ class ViewController: UIViewController {
             print(dic)
         }
         
-//        aad.request(createTarget(dd.ffff("sd")), completion: { result in
-//            switch result {
-//            case let .success(response):break
-//            case let .failure(error):break
-//            }
-//        })
+        aad.request(createTarget(dd.ffff("sd")), completion: { result in
+            switch result {
+            case let .success(response):break
+            case let .failure(error):break
+            }
+        })
     }
     
 
 
     enum dd:BDTargetType {
+        
         case ffff(_ ff:String)
         
         var path: String {
@@ -91,11 +87,9 @@ class ViewController: UIViewController {
             return .getRequestParam(parameters: [:])
         }
         
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        
+//        var HUDString: String {
+//            return "5678uhbnmkjhgfr4"
+//        }
     }
     
 }
