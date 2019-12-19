@@ -15,7 +15,7 @@
 		0221780823A1E67E00CA2C24 /* DDNetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221780723A1E67E00CA2C24 /* DDNetworkActivityPlugin.swift */; };
 		0221780A23A224DC00CA2C24 /* DDNetWorkTimeOutPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221780923A224DC00CA2C24 /* DDNetWorkTimeOutPlugin.swift */; };
 		0221780E23A23D5E00CA2C24 /* DDTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221780D23A23D5E00CA2C24 /* DDTargetType.swift */; };
-		0221781023A249F200CA2C24 /* bdSupTArget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221780F23A249F200CA2C24 /* bdSupTArget.swift */; };
+		0221781023A249F200CA2C24 /* BDTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221780F23A249F200CA2C24 /* BDTargetType.swift */; };
 		0221781223A2511600CA2C24 /* DDCustomTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221781123A2511600CA2C24 /* DDCustomTarget.swift */; };
 		0250F11823A7EFDD00C0DC4F /* DDNetworkHudImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0250F11723A7EFDD00C0DC4F /* DDNetworkHudImage.bundle */; };
 		025359C823A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */; };
@@ -42,7 +42,7 @@
 		0221780723A1E67E00CA2C24 /* DDNetworkActivityPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetworkActivityPlugin.swift; sourceTree = "<group>"; };
 		0221780923A224DC00CA2C24 /* DDNetWorkTimeOutPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetWorkTimeOutPlugin.swift; sourceTree = "<group>"; };
 		0221780D23A23D5E00CA2C24 /* DDTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDTargetType.swift; sourceTree = "<group>"; };
-		0221780F23A249F200CA2C24 /* bdSupTArget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bdSupTArget.swift; sourceTree = "<group>"; };
+		0221780F23A249F200CA2C24 /* BDTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDTargetType.swift; sourceTree = "<group>"; };
 		0221781123A2511600CA2C24 /* DDCustomTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDCustomTarget.swift; sourceTree = "<group>"; };
 		0250F11723A7EFDD00C0DC4F /* DDNetworkHudImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DDNetworkHudImage.bundle; sourceTree = "<group>"; };
 		025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetworkLoggerPlugin.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 				02F25585239E514C0001E2EC /* DDSwiftNetwork */,
 				02F2556D239E27110001E2EC /* AppDelegate.swift */,
 				02F25571239E27110001E2EC /* ViewController.swift */,
-				0221780F23A249F200CA2C24 /* bdSupTArget.swift */,
+				0221780F23A249F200CA2C24 /* BDTargetType.swift */,
 				02547DC323A77EF700091B01 /* ttViewController.swift */,
 				02F25573239E27110001E2EC /* Main.storyboard */,
 				02F25579239E27120001E2EC /* Assets.xcassets */,
@@ -304,7 +304,7 @@
 				0221780A23A224DC00CA2C24 /* DDNetWorkTimeOutPlugin.swift in Sources */,
 				0263B72C23AB5CED007151F7 /* DDUpYun.m in Sources */,
 				020FBE4E23A4DC1900E033C1 /* DDNetworkLinkManager.swift in Sources */,
-				0221781023A249F200CA2C24 /* bdSupTArget.swift in Sources */,
+				0221781023A249F200CA2C24 /* BDTargetType.swift in Sources */,
 				025F5B8523A9077F00330DC6 /* DDMoyaProviderImgUpdaload+Rx.swift in Sources */,
 				0221780623A159F800CA2C24 /* CommonTools.swift in Sources */,
 				02547DC623A781B400091B01 /* DDNetworkHUD.swift in Sources */,

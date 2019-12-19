@@ -9,6 +9,10 @@
 import Foundation
 import Moya
 
+func createTarget(_ t : BDTargetType) -> DDCustomTarget {
+    let a = BDCustomTarget(t)
+    return DDCustomTarget(a)
+}
 
 public protocol BDTargetType {
 
@@ -24,7 +28,7 @@ public protocol BDTargetType {
 
 extension BDTargetType {
     var HUDString: String {
-        return "sdsd"
+        return ""
     }
 }
 

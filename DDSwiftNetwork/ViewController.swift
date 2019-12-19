@@ -12,10 +12,7 @@ import RxSwift
 import RxCocoa
 import MBProgressHUD
 
-func createTarget(_ t : BDTargetType) -> DDCustomTarget {
-    let a = BDCustomTarget(t)
-    return DDCustomTarget(a)
-}
+
 
 extension ViewController {
     func networkStatus() {
@@ -66,14 +63,20 @@ class ViewController: UIViewController {
             print(dic)
         }
         
-//        aad.rx.
+        aad.rx.requestContent(createTarget(dd.ffff("sd"))).subscribe(onSuccess: { (any) in
+            print(any)
+        }) { (err) in
+            print(err)
+        }
         
-        aad.request(createTarget(dd.ffff("sd")), completion: { result in
-            switch result {
-            case let .success(response):break
-            case let .failure(error):break
-            }
-        })
+        
+        
+//        aad.request(createTarget(dd.ffff("sd")), completion: { result in
+//            switch result {
+//            case let .success(response):break
+//            case let .failure(error):break
+//            }
+//        })
     }
     
 
