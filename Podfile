@@ -1,16 +1,16 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios,'9.0'
+use_frameworks!
+inhibit_all_warnings!
 
 target 'DDSwiftNetwork' do
-  use_frameworks!
      pod 'RxSwift'
      pod 'RxCocoa'
      pod 'RxDataSources'
-     pod 'RxAlamofire'
      pod 'Alamofire'
      pod 'Moya'
      pod 'CleanJSON'
      pod 'MBProgressHUD'
      pod 'Kingfisher’
-     pod 'MLeaksFinder'
+     pod 'UpYunSDK'
+     pod 'Qiniu'
 end

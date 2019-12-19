@@ -19,6 +19,8 @@ public enum DDNetworkError : Error {
     //response
     case responseJson(data:Data)
     case responseEncoding(data:Data)
+    
+    case imageUpload
 }
 
 extension DDNetworkError: LocalizedError {
@@ -36,6 +38,8 @@ extension DDNetworkError: LocalizedError {
             return "[DDNetworkError:响应Data无法解析为Json]"
         case .responseEncoding(data: _):
             return "[DDNetworkError:响应Data无法通过Encoding解析]"
+        case .imageUpload:
+            return "[DDNetworkError:图片上传出错]"
         }
     }
     

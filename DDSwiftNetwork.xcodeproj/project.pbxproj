@@ -19,9 +19,10 @@
 		0221781223A2511600CA2C24 /* DDCustomTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0221781123A2511600CA2C24 /* DDCustomTarget.swift */; };
 		0250F11823A7EFDD00C0DC4F /* DDNetworkHudImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0250F11723A7EFDD00C0DC4F /* DDNetworkHudImage.bundle */; };
 		025359C823A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */; };
-		02547DC223A767C700091B01 /* DDNetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02547DC123A767C700091B01 /* DDNetworkResponse.swift */; };
+		02547DC223A767C700091B01 /* DDMoyaProvider+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02547DC123A767C700091B01 /* DDMoyaProvider+Rx.swift */; };
 		02547DC423A77EF700091B01 /* ttViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02547DC323A77EF700091B01 /* ttViewController.swift */; };
 		02547DC623A781B400091B01 /* DDNetworkHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02547DC523A781B400091B01 /* DDNetworkHUD.swift */; };
+		025F5B8523A9077F00330DC6 /* DDMoyaProviderImgUpdaload+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F5B8423A9077F00330DC6 /* DDMoyaProviderImgUpdaload+Rx.swift */; };
 		02F2556E239E27110001E2EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F2556D239E27110001E2EC /* AppDelegate.swift */; };
 		02F25572239E27110001E2EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F25571239E27110001E2EC /* ViewController.swift */; };
 		02F25575239E27110001E2EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F25573239E27110001E2EC /* Main.storyboard */; };
@@ -44,10 +45,11 @@
 		0221781123A2511600CA2C24 /* DDCustomTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDCustomTarget.swift; sourceTree = "<group>"; };
 		0250F11723A7EFDD00C0DC4F /* DDNetworkHudImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DDNetworkHudImage.bundle; sourceTree = "<group>"; };
 		025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetworkLoggerPlugin.swift; sourceTree = "<group>"; };
-		02547DC123A767C700091B01 /* DDNetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDNetworkResponse.swift; sourceTree = "<group>"; };
+		02547DC123A767C700091B01 /* DDMoyaProvider+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DDMoyaProvider+Rx.swift"; sourceTree = "<group>"; };
 		02547DC323A77EF700091B01 /* ttViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ttViewController.swift; sourceTree = "<group>"; };
 		02547DC523A781B400091B01 /* DDNetworkHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDNetworkHUD.swift; sourceTree = "<group>"; };
 		02547DCF23A78E3800091B01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		025F5B8423A9077F00330DC6 /* DDMoyaProviderImgUpdaload+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DDMoyaProviderImgUpdaload+Rx.swift"; sourceTree = "<group>"; };
 		02F2556A239E27110001E2EC /* DDSwiftNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDSwiftNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F2556D239E27110001E2EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02F25571239E27110001E2EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,7 +122,8 @@
 		02F25585239E514C0001E2EC /* DDSwiftNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				02547DC123A767C700091B01 /* DDNetworkResponse.swift */,
+				02547DC123A767C700091B01 /* DDMoyaProvider+Rx.swift */,
+				025F5B8423A9077F00330DC6 /* DDMoyaProviderImgUpdaload+Rx.swift */,
 				020FBE4D23A4DC1900E033C1 /* DDNetworkLinkManager.swift */,
 				020FBE4B23A4AC1E00E033C1 /* DDNetworkError.swift */,
 				025359C723A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift */,
@@ -279,7 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02F25572239E27110001E2EC /* ViewController.swift in Sources */,
-				02547DC223A767C700091B01 /* DDNetworkResponse.swift in Sources */,
+				02547DC223A767C700091B01 /* DDMoyaProvider+Rx.swift in Sources */,
 				025359C823A0E9910075CEA3 /* DDNetworkLoggerPlugin.swift in Sources */,
 				020FBE4C23A4AC1E00E033C1 /* DDNetworkError.swift in Sources */,
 				02F2556E239E27110001E2EC /* AppDelegate.swift in Sources */,
@@ -293,6 +296,7 @@
 				0221780A23A224DC00CA2C24 /* DDNetWorkTimeOutPlugin.swift in Sources */,
 				020FBE4E23A4DC1900E033C1 /* DDNetworkLinkManager.swift in Sources */,
 				0221781023A249F200CA2C24 /* bdSupTArget.swift in Sources */,
+				025F5B8523A9077F00330DC6 /* DDMoyaProviderImgUpdaload+Rx.swift in Sources */,
 				0221780623A159F800CA2C24 /* CommonTools.swift in Sources */,
 				02547DC623A781B400091B01 /* DDNetworkHUD.swift in Sources */,
 			);

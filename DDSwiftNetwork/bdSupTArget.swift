@@ -29,6 +29,10 @@ extension BDTargetType {
 }
 
 public enum BDCustomTarget: DDTargetType {
+    public var loginOutTime: () -> Void {
+        return { }
+    }
+    
     /// The embedded `TargetType`.
     case target(BDTargetType)
     

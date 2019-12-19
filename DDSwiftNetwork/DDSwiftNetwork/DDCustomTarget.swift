@@ -23,15 +23,15 @@ public enum DDCustomTarget: TargetTypeExtension {
         case .target(let target): return target
         }
     }
+    
+    /// The baseURL of the embedded target.
+    public var baseURL: URL {
+        return target.baseURL
+    }
 
     /// The embedded target's base `URL`.
     public var path: String {
         return target.path
-    }
-
-    /// The baseURL of the embedded target.
-    public var baseURL: URL {
-        return target.baseURL
     }
     
     public var whiteList: [String] {

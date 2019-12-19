@@ -36,6 +36,9 @@ public protocol DDTargetType {
     
     /// 请求超时定义
     var timeOut : Int { get }
+    
+    /// 登录过期的操作
+    var loginOutTime : ()->Void { get }
 }
 
 public enum DDTask {

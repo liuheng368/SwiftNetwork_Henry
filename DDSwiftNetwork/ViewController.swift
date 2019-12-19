@@ -9,10 +9,12 @@
 import UIKit
 import Moya
 import RxSwift
+import RxCocoa
 import MBProgressHUD
 
 func createTarget(_ t : BDTargetType) -> DDCustomTarget {
-    return DDCustomTarget(BDCustomTarget(t))
+    let a = BDCustomTarget(t)
+    return DDCustomTarget(a)
 }
 
 extension ViewController {
@@ -29,7 +31,6 @@ class ViewController: UIViewController {
 
     let aad = DDMoyaProvider<BDCustomTarget>()
     let disposeBag = DisposeBag()
-    
     
     
     @objc func asd() {
@@ -64,6 +65,8 @@ class ViewController: UIViewController {
         if let dic = a as? [String:Any]{
             print(dic)
         }
+        
+//        aad.rx.
         
         aad.request(createTarget(dd.ffff("sd")), completion: { result in
             switch result {
