@@ -1,24 +1,18 @@
 PODS:
-  - AFNetworking (2.7.0):
-    - AFNetworking/NSURLConnection (= 2.7.0)
-    - AFNetworking/NSURLSession (= 2.7.0)
-    - AFNetworking/Reachability (= 2.7.0)
-    - AFNetworking/Security (= 2.7.0)
-    - AFNetworking/Serialization (= 2.7.0)
-    - AFNetworking/UIKit (= 2.7.0)
-  - AFNetworking/NSURLConnection (2.7.0):
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.7.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.7.0)
-  - AFNetworking/Security (2.7.0)
-  - AFNetworking/Serialization (2.7.0)
-  - AFNetworking/UIKit (2.7.0):
-    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Alamofire (4.9.1)
   - CleanJSON (1.0.0)
@@ -42,10 +36,9 @@ PODS:
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
-  - UpYunSDK (2.0.1):
-    - AFNetworking (~> 2.3)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.2.1)
   - Alamofire
   - CleanJSON
   - Kingfisher
@@ -55,7 +48,6 @@ DEPENDENCIES:
   - RxCocoa
   - RxDataSources
   - RxSwift
-  - UpYunSDK
 
 SPEC REPOS:
   trunk:
@@ -72,10 +64,9 @@ SPEC REPOS:
     - RxDataSources
     - RxRelay
     - RxSwift
-    - UpYunSDK
 
 SPEC CHECKSUMS:
-  AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   CleanJSON: 702dd619e1329c6399a579aa19af311acf47e461
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
@@ -88,8 +79,7 @@ SPEC CHECKSUMS:
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
-  UpYunSDK: c317bff8c4077f2f1da12299996c9b70201ec85d
 
-PODFILE CHECKSUM: f3290048e4958cf435ddd6d5bd85189686673cae
+PODFILE CHECKSUM: ea6ba394f4794cb22298a0c5d291116dcc1de35e
 
 COCOAPODS: 1.8.4
