@@ -6,8 +6,6 @@
 //  Copyright © 2019 刘恒. All rights reserved.
 //
 
-import Foundation
-import UIKit
 import Moya
 import RxSwift
 import RxCocoa
@@ -33,7 +31,7 @@ public extension Reactive where Base: MoyaProviderType {
                     observe.onCompleted()
                     return
                 }
-                DDMoyaProvider<BDCustomTarget>().rx
+                DDMoyaProvider().rx
                     .requestContent(target as! DDCustomTarget)
                     .subscribe(onSuccess: { (obj) in
                         if let dic = obj as? [String:Any] {
@@ -80,7 +78,11 @@ public extension Reactive where Base: MoyaProviderType {
                 }
             })
             let upManager = QNUploadManager()
+            #if swift(>=4.2)
             let imgData = image.jpegData(compressionQuality: 0.8)
+            #else
+            let imgData = UIImageJPEGRepresentation(image, 0.8)
+            #endif
             upManager?.put(imgData, key: key, token: token, complete: { (_, _, resp) in
                 if let _ = resp {
                     successBlock(url)
@@ -107,7 +109,11 @@ public extension Reactive where Base: MoyaProviderType {
             if let keyString = url.components(separatedBy: "/").last,
                 let index = url.range(of: keyString){
                 let imageBaseURL = url[..<index.lowerBound]
+                #if swift(>=4.2)
                 let imgData = image.jpegData(compressionQuality: 0.8)
+                #else
+                let imgData = UIImageJPEGRepresentation(image, 0.8)
+                #endif
                 upYun?.uploadFile(with: imgData, useSaveKey: keyString, progress: { (percent) in
                     let f = 1 / Float(total)
                     hud.progress = f * Float(doneImg) + f * Float(percent)

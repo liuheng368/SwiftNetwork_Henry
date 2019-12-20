@@ -25,7 +25,7 @@ extension ViewController {
 
 class ViewController: UIViewController {
 
-    let network = DDMoyaProvider<BDCustomTarget>()
+    let network = DDMoyaProvider()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {

@@ -12,7 +12,7 @@ import RxSwift
 import CleanJSON
 
 /// 请求发起者
-class DDMoyaProvider<Target: DDTargetType>: MoyaProvider<DDCustomTarget> {
+class DDMoyaProvider: MoyaProvider<DDCustomTarget> {
     
     init() {
         super.init(plugins: [DDNetworkLoggerPlugin(),
