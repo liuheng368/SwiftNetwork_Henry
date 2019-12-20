@@ -26,7 +26,12 @@ enum ListRequest : BDTargetType {
     }
     
     var HUDString: String {
-        return "列表加载中"
+        switch self {
+        case .listDic:
+            return "列表加载中(dic)"
+        case .listEncodable:
+            return "列表加载中(encoable)"
+        }
     }
 }
 

@@ -19,7 +19,11 @@ public final class DDNetworkActivityPlugin: PluginType {
         if isWhiteList(target) {return}
         if let target = target.typeExtension{
             if target.HUDString.count <= 0 {return}
-            hud = DDShowHUD.progress(title: target.HUDString).show()
+            if let hud = hud {
+                hud.label.text = target.HUDString
+            }else{
+                hud = DDShowHUD.progress(title: target.HUDString).show()
+            }
         }
     }
 
