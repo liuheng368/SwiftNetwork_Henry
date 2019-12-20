@@ -13,7 +13,6 @@ import RxCocoa
 import MBProgressHUD
 
 
-
 extension ViewController {
     func networkStatus() {
         DDNetworkLinkManager.shared.state()
@@ -26,21 +25,39 @@ extension ViewController {
 
 class ViewController: UIViewController {
 
-    let aad = DDMoyaProvider<BDCustomTarget>()
+    let network = DDMoyaProvider<BDCustomTarget>()
     let disposeBag = DisposeBag()
     
-    
-    @objc func asd() {
-        print("ghjkl")
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let btn = UIButton(frame: CGRect(x: 100, y: 100, width: 200, height: 200))
-        btn.setTitle("sdsd", for: .normal)
-        btn.backgroundColor = UIColor.black
-        btn.addTarget(self, action: #selector(asd), for: .allEvents)
-        self.view.addSubview(btn)
         
+        
+        network.rx.requestContent(CreateTarget(ListRequest.listDic))
+            .subscribe(onSuccess: { (any) in
+                print(any)
+            }) { (err) in
+                print(err)
+        }.disposed(by: disposeBag)
+        
+        network.rx.requestDecodable(CreateTarget(ListRequest.listEncodable), ListResponse.self).subscribe(onSuccess: { (model) in
+            print(model)
+        }) { (error) in
+            print(error)
+        }.disposed(by: disposeBag)
+    }
+}
+
+
+
+
+
+
+
+
+
+extension ViewController {
+    func test() {
+                
         networkStatus()
         self.view.backgroundColor = UIColor.systemRed
 
@@ -55,21 +72,15 @@ class ViewController: UIViewController {
             print(error.localizedDescription)
         }
         
-        let obj = ddsd()
-        let encoder = JSONEncoder()
-        let data = try? encoder.encode(obj)
-        let a = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments)
-        if let dic = a as? [String:Any]{
-            print(dic)
-        }
-        
-        aad.rx.requestContent(createTarget(dd.ffff("sd"))).subscribe(onSuccess: { (any) in
-            print(any)
-        }) { (err) in
-            print(err)
-        }
-        
-        
+//                let obj = ddsd()
+//                let encoder = JSONEncoder()
+//                let data = try? encoder.encode(obj)
+//                let a = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+//                if let dic = a as? [String:Any]{
+//                    print(dic)
+//                }
+
+
         
 //        aad.request(createTarget(dd.ffff("sd")), completion: { result in
 //            switch result {
@@ -78,31 +89,7 @@ class ViewController: UIViewController {
 //            }
 //        })
     }
-    
-
-
-    enum dd:BDTargetType {
-        
-        case ffff(_ ff:String)
-        
-        var path: String {
-            return "/j/app/radio/channels"
-        }
-        
-        var task: DDTask {
-            return .getRequestParam(parameters: [:])
-        }
-        
-//        var HUDString: String {
-//            return "5678uhbnmkjhgfr4"
-//        }
-    }
-    
 }
 
 
-struct ddsd : Codable {
-    var s:String = "sd"
-    var b:Int = 232
-    var c:Bool = false
-}
+

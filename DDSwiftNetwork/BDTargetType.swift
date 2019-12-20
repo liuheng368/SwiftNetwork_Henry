@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-func createTarget(_ t : BDTargetType) -> DDCustomTarget {
+func CreateTarget(_ t : BDTargetType) -> DDCustomTarget {
     let a = BDCustomTarget(t)
     return DDCustomTarget(a)
 }

@@ -27,14 +27,14 @@ public extension Reactive where Base: MoyaProviderType {
     
     /// 请求方法，返回值为 T : Decodable，推荐使用
     /// - Parameter token: <#token description#>
-    func requestDecodable<T:Decodable>(_ target: Base.Target) -> Single<T> {
+    func requestDecodable<T: Decodable>(_ target: Base.Target,_ type: T.Type) -> Single<T> {
         return Single<T>.create { [weak base] single in
             let cancellableToken = base?.request(target, callbackQueue: nil, progress: nil) { result in
                 switch result {
                 case .success(let response):
                     do {
                         let successRes = try response.filterSuccessfulStatusCodes()
-                        if let decodable = try? CleanJSONDecoder().decode(T.self, from: successRes.data) {
+                        if let decodable = try? CleanJSONDecoder().decode(type, from: successRes.data) {
                             single(.success(decodable))
                         }else{
                             single(.error(DDNetworkError
@@ -71,9 +71,9 @@ public extension Reactive where Base: MoyaProviderType {
                     do {
                         let successRes = try response.filterSuccessfulStatusCodes()
                         if let strJson = try? successRes.mapJSON(),
-                            let successDic = strJson as? [String:Any],
-                            let content = successDic["content"]{
-                            single(.success(content))
+                            let successDic = strJson as? [String:Any]{
+//                            , let content = successDic["content"]{
+                            single(.success(successDic))
                         }else{
                             single(.error(DDNetworkError
                                 .responseJson(data: response.data)))
