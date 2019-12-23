@@ -19,11 +19,7 @@ public final class DDNetworkActivityPlugin: PluginType {
         if isWhiteList(target) {return}
         if let target = target.typeExtension{
             if target.HUDString.count <= 0 {return}
-            if let hud = hud {
-                hud.label.text = target.HUDString
-            }else{
-                hud = DDShowHUD.progress(title: target.HUDString).show()
-            }
+            hud = DDShowHUD.progress(title: target.HUDString).show()
         }
     }
 
@@ -138,6 +134,7 @@ public final class DDNetworkActivityPlugin: PluginType {
             return "服务器饿晕了, 工程师正在解救\(errCode)"
         case 400..<500:
             return "打开服务器的方式不对\(errCode),调整一下？"
+        default:break
         }
 #endif
         return nil

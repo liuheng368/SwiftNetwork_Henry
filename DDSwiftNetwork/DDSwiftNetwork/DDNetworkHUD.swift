@@ -60,24 +60,15 @@ extension DDShowHUD {
     }
     
     fileprivate static var WarningImg : UIImage {
-        let bundle = Bundle(path: Bundle.main.path(forResource: "DDNetworkHudImage", ofType: "bundle")!)
-        let image = UIImage(named: "info", in: bundle, compatibleWith: nil) ?? UIImage()
-        image.withRenderingMode(.alwaysTemplate)
-        return image
+        return GetImageBundle.getImageBundle(imageName: "info")
     }
     
     fileprivate static var ErrorImg : UIImage {
-        let bundle = Bundle(path: Bundle.main.path(forResource: "DDNetworkHudImage", ofType: "bundle")!)
-        let image = UIImage(named: "error", in: bundle, compatibleWith: nil) ?? UIImage()
-        image.withRenderingMode(.alwaysTemplate)
-        return image
+        return GetImageBundle.getImageBundle(imageName: "error")
     }
     
     fileprivate static var SuccessImg : UIImage {
-        let bundle = Bundle(path: Bundle.main.path(forResource: "DDNetworkHudImage", ofType: "bundle")!)
-        let image = UIImage(named: "success", in: bundle, compatibleWith: nil) ?? UIImage()
-        image.withRenderingMode(.alwaysTemplate)
-        return image
+        return GetImageBundle.getImageBundle(imageName: "success")
     }
     
     fileprivate func showTitleHUD(title: String) -> MBProgressHUD {
@@ -229,4 +220,14 @@ fileprivate func readCurrentController(_ window:UIWindow?) -> UIViewController? 
         rootVc = (rootVc_ as! UINavigationController).topViewController
     }
     return rootVc
+}
+
+fileprivate class GetImageBundle {
+    static func getImageBundle(imageName:String) -> UIImage {
+        let path = Bundle(for: GetImageBundle.self).resourcePath! + "/DDSwiftNetwork.bundle/DDNetworkHudImage.bundle"
+        let caBundle = Bundle(path: path)
+        let image = UIImage(contentsOfFile: (caBundle?.path(forResource: imageName, ofType: "png"))!)
+        image!.withRenderingMode(.alwaysTemplate)
+        return image!
+    }
 }
