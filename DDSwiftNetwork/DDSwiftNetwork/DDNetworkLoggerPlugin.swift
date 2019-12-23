@@ -23,11 +23,11 @@ public enum DDNetworkLoggerNotifi {
     }
 }
 
-public final class DDNetworkLoggerPlugin: PluginType {
+final class DDNetworkLoggerPlugin: PluginType {
     
     /// Request-打印
     /// - Parameter target: <#target description#>
-    public func willSend(_ request: RequestType, target: TargetType) {
+    func willSend(_ request: RequestType, target: TargetType) {
         if isWhiteList(target) {return}
         
         var header : String = "[:]"
@@ -55,7 +55,7 @@ public final class DDNetworkLoggerPlugin: PluginType {
     /// Response打印
     /// - Parameter result: <#result description#>
     /// - Parameter target: <#target description#>
-    public func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
+    func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
         if isWhiteList(target) {return}
         
         var responseResult : Any = ""
@@ -98,6 +98,4 @@ public final class DDNetworkLoggerPlugin: PluginType {
         }
         return param
     }
-    
-    
 }

@@ -6,6 +6,8 @@
 //  Copyright © 2019 刘恒. All rights reserved.
 //
 
+import Foundation
+import UIKit
 import Moya
 import RxSwift
 import RxCocoa

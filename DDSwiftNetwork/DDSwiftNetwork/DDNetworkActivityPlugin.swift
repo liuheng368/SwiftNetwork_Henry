@@ -11,22 +11,39 @@ import Moya
 import Result
 import MBProgressHUD
 
-public final class DDNetworkActivityPlugin: PluginType {
+final class DDNetworkActivityPlugin: PluginType {
     
     fileprivate var hud : MBProgressHUD?
+    lazy var activialCount = 0
     
-    public func willSend(_ request: RequestType, target: TargetType) {
+    func willSend(_ request: RequestType, target: TargetType) {
         if isWhiteList(target) {return}
         if let target = target.typeExtension{
             if target.HUDString.count <= 0 {return}
-            hud = DDShowHUD.progress(title: target.HUDString).show()
+            if let hud = hud {
+                hud.label.text = target.HUDString
+            }else{
+                hud = DDShowHUD.progress(title: target.HUDString).show()
+            }
+            objc_sync_enter(self)
+            activialCount += 1
+            objc_sync_exit(self)
         }
     }
 
     /// Called by the provider as soon as a response arrives, even if the request is canceled.
-    public func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType) {
+    func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType) {
         if isWhiteList(target) {return}
-        hud?.hideInMainThread()
+        
+        if activialCount > 1 {
+            objc_sync_enter(self)
+            activialCount -= 1
+            objc_sync_exit(self)
+        }else{
+            hud?.hideInMainThread()
+            activialCount = 0
+        }
+        
         if case .success(let response) = result {
             do {
                 _ = try response.filterSuccessfulStatusCodes()
@@ -134,7 +151,8 @@ public final class DDNetworkActivityPlugin: PluginType {
             return "服务器饿晕了, 工程师正在解救\(errCode)"
         case 400..<500:
             return "打开服务器的方式不对\(errCode),调整一下？"
-        default:break
+        default:
+            return "未知问题"
         }
 #endif
         return nil

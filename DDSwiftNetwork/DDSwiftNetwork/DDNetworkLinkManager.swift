@@ -22,10 +22,13 @@ extension DDNetworkLinkManager {
             self.reachManager?.listener = { status in
                 switch status {
                     case .unknown:
+                        self.netState = NetState.unknown
                         observer.onNext((NetState.unknown,self.firstLink))
                     case .notReachable:
+                        self.netState = NetState.notReachable
                         observer.onNext((NetState.notReachable,self.firstLink))
                     case .reachable(let status_):
+                        self.netState = NetState.reachable(status_)
                         observer.onNext((NetState.reachable(status_),self.firstLink))
                     }
                 self.firstLink = false
@@ -38,6 +41,8 @@ extension DDNetworkLinkManager {
 }
 
 public class DDNetworkLinkManager {
+    public var netState : NetState?
+    
     private var reachManager = NetworkReachabilityManager()
     private var firstLink : Bool = true
     private init() {

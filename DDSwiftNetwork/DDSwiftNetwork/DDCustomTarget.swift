@@ -131,8 +131,7 @@ public enum DDCustomTarget: TargetTypeExtension {
 fileprivate extension DDCustomTarget {
     /// 将Encodable转换为[String:Any]
     /// - Parameter urlEncodable: <#urlEncodable description#>
-    func JSONEncoderForParam(_ urlEncodable: Encodable?)throws -> [String:Any] {
-        guard let urlEncodable = urlEncodable else {return [:]}
+    func JSONEncoderForParam(_ urlEncodable: Encodable)throws -> [String:Any] {
         do {
             let encodable = AnyEncodable(urlEncodable)
             let data = try JSONEncoder().encode(encodable)

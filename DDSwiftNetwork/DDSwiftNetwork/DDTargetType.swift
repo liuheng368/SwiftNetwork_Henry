@@ -46,14 +46,14 @@ public enum DDTask {
 //GET
     case getRequestParam(parameters: [String: Any])
     //default OutputFormat:prettyPrinted
-    case getRequestEncodable(Encodable?)
+    case getRequestEncodable(Encodable)
     
 //POST
-    case postRequestParam(bodyParameters: [String: Any],
+    case postRequestParam(bodyParameters: [String: Any]=[:],
         urlParameters: [String: Any])
     //default OutputFormat:prettyPrinted
-    case postRequestEncodable(bodyParameters: [String: Any],
-        urlEncodable: Encodable?)
+    case postRequestEncodable(bodyParameters: [String: Any]=[:],
+        urlEncodable: Encodable)
     
 //Download
     case downloadParameters(parameters: [String: Any],

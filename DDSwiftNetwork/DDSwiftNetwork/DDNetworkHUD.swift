@@ -10,8 +10,8 @@
 import Foundation
 import MBProgressHUD
 
-extension MBProgressHUD {
-    public func hideInMainThread(_ animated : Bool = true ) {
+public extension MBProgressHUD {
+    func hideInMainThread(_ animated : Bool = true ) {
         DispatchQueue.main.async {[weak self] in
             guard let `self` = self else{return}
             self.hide(animated: animated)

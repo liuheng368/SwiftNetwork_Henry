@@ -12,7 +12,7 @@ import RxSwift
 import CleanJSON
 
 /// 请求发起者
-class DDMoyaProvider: MoyaProvider<DDCustomTarget> {
+public class DDMoyaProvider: MoyaProvider<DDCustomTarget> {
     
     init() {
         super.init(plugins: [DDNetworkLoggerPlugin(),
@@ -27,18 +27,21 @@ public extension Reactive where Base: MoyaProviderType {
     
     /// 请求方法，返回值为 T : Decodable，推荐使用
     /// - Parameter token: <#token description#>
-    func requestDecodable<T: Decodable>(_ target: Base.Target,_ type: T.Type) -> Single<T> {
+    func requestDecodable<T:Decodable>(_ target: Base.Target) -> Single<T> {
         return Single<T>.create { [weak base] single in
             let cancellableToken = base?.request(target, callbackQueue: nil, progress: nil) { result in
                 switch result {
                 case .success(let response):
                     do {
                         let successRes = try response.filterSuccessfulStatusCodes()
-                        if let decodable = try? CleanJSONDecoder().decode(type, from: successRes.data) {
+                        if let strJson = try? successRes.mapJSON(),
+                            let successDic = strJson as? [String:Any],
+                            let data = try? JSONSerialization.data(withJSONObject: successDic["content"] as Any, options: .fragmentsAllowed),
+                            let decodable = try? CleanJSONDecoder().decode(T.self, from: data) {
                             single(.success(decodable))
                         }else{
                             single(.error(DDNetworkError
-                                .responseJson(data: response.data)))
+                                .responseEncoding(data: response.data)))
                         }
                     } catch {
                         if let DDTarget = target as? DDTargetType,
@@ -71,9 +74,9 @@ public extension Reactive where Base: MoyaProviderType {
                     do {
                         let successRes = try response.filterSuccessfulStatusCodes()
                         if let strJson = try? successRes.mapJSON(),
-                            let successDic = strJson as? [String:Any]{
-//                            , let content = successDic["content"]{
-                            single(.success(successDic))
+                            let successDic = strJson as? [String:Any],
+                            let content = successDic["content"]{
+                            single(.success(content))
                         }else{
                             single(.error(DDNetworkError
                                 .responseJson(data: response.data)))
