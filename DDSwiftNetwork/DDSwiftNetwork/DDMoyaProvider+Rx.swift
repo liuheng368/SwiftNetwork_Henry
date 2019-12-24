@@ -14,7 +14,7 @@ import CleanJSON
 /// 请求发起者
 public class DDMoyaProvider: MoyaProvider<DDCustomTarget> {
     
-    init() {
+    public init() {
         super.init(plugins: [DDNetworkLoggerPlugin(),
                              DDNetworkActivityPlugin(),
                              DDNetWorkTimeOutPlugin()])
@@ -27,7 +27,7 @@ public extension Reactive where Base: MoyaProviderType {
     
     /// 请求方法，返回值为 T : Decodable，推荐使用
     /// - Parameter token: <#token description#>
-    func requestDecodable<T:Decodable>(_ target: Base.Target) -> Single<T> {
+    func requestDecodable<T: Decodable>(_ target: Base.Target,_ type: T.Type) -> Single<T> {
         return Single<T>.create { [weak base] single in
             let cancellableToken = base?.request(target, callbackQueue: nil, progress: nil) { result in
                 switch result {
@@ -37,7 +37,7 @@ public extension Reactive where Base: MoyaProviderType {
                         if let strJson = try? successRes.mapJSON(),
                             let successDic = strJson as? [String:Any],
                             let data = try? JSONSerialization.data(withJSONObject: successDic["content"] as Any, options: .fragmentsAllowed),
-                            let decodable = try? CleanJSONDecoder().decode(T.self, from: data) {
+                            let decodable = try? CleanJSONDecoder().decode(type, from: data) {
                             single(.success(decodable))
                         }else{
                             single(.error(DDNetworkError
