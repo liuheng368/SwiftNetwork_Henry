@@ -23,7 +23,7 @@ public enum DDNetworkError : Error {
     case imageUpload
 }
 
-public extension DDNetworkError: LocalizedError {
+extension DDNetworkError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .encoding:
@@ -53,7 +53,7 @@ public extension DDNetworkError: LocalizedError {
     }
 }
 
-public extension DDNetworkError: CustomNSError {
+extension DDNetworkError: CustomNSError {
     public var errorUserInfo: [String: Any] {
         var userInfo: [String: Any] = [:]
         userInfo[NSLocalizedDescriptionKey] = errorDescription
