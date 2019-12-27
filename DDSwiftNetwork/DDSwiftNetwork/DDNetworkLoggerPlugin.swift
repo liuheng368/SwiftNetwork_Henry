@@ -39,7 +39,7 @@ final class DDNetworkLoggerPlugin: PluginType {
         """
         [NetworkLogger:Request
         Method: \(target.method)
-        URL: \(target.baseURL)\(target.path)
+        URL: \(target.baseURL.path)\(target.path)
         Header: \(header)
         Params: \(requestParam(target))]
         """
@@ -60,7 +60,7 @@ final class DDNetworkLoggerPlugin: PluginType {
         
         var responseResult : Any = ""
         if case .success(let responses) = result {
-            if let str = try? JSONSerialization.jsonObject(with: responses.data, options: .mutableContainers){
+            if let str = String(data: responses.data, encoding: .utf8) {
                 responseResult = str
             }else{
                 responseResult = "Received error/empty response data for\n \(target.baseURL)\(target.path)"

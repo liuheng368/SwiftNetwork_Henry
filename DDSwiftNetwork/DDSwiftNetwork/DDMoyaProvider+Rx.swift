@@ -27,7 +27,7 @@ public extension Reactive where Base: MoyaProviderType {
     
     /// 请求方法，返回值为 T : Decodable，推荐使用
     /// - Parameter token: <#token description#>
-    func requestDecodable<T: Decodable>(_ target: Base.Target,_ type: T.Type) -> Single<T> {
+    func requestForDecodable<T:Decodable>(_ target: Base.Target,_ type: T.Type) -> Single<T> {
         return Single<T>.create { [weak base] single in
             let cancellableToken = base?.request(target, callbackQueue: nil, progress: nil) { result in
                 switch result {
@@ -66,7 +66,7 @@ public extension Reactive where Base: MoyaProviderType {
     
     /// 请求方法，返回值为response中content的值
     /// - Parameter token: <#token description#>
-    func requestContent(_ target: Base.Target) -> Single<Any> {
+    func requestForContent(_ target: Base.Target) -> Single<Any> {
         return Single<Any>.create { [weak base] single in
             let cancellableToken = base?.request(target, callbackQueue: nil, progress: nil) { result in
                 switch result {
