@@ -75,20 +75,39 @@ public enum DDCustomTarget: TargetTypeExtension {
                 return .requestParameters(parameters: [:], encoding: URLEncoding.default)
             }
         case .postRequestParam(let bodyParameters, let urlParameters):
-            return .requestCompositeParameters(bodyParameters: bodyParameters, bodyEncoding: URLEncoding.httpBody, urlParameters: urlParameters)
-        case .postRequestEncodable(let bodyParameters, let urlEncodable):
             do {
-                return .requestCompositeParameters(bodyParameters: bodyParameters, bodyEncoding: URLEncoding.httpBody, urlParameters: try JSONEncoderForParam(urlEncodable))
+                if let bodyParameters = bodyParameters {
+                    return .requestCompositeData(bodyData: try JSONSerialization.data(withJSONObject: bodyParameters, options: .prettyPrinted),
+                    urlParameters: urlParameters)
+                }else{
+                    return .requestCompositeData(bodyData: Data(), urlParameters: urlParameters)
+                }
             } catch {
                 #if DEBUG
                 print("\(error.localizedDescription)")
                 #endif
-                return .requestCompositeParameters(bodyParameters: bodyParameters, bodyEncoding: URLEncoding.httpBody, urlParameters: [:])
+                return .requestCompositeData(bodyData: Data(),urlParameters: urlParameters)
+            }
+        case .postRequestEncodable(let bodyParameters,let urlEncodable):
+            do {
+                if let bodyParameters = bodyParameters {
+                    return .requestCompositeData(bodyData: try JSONSerialization.data(withJSONObject: bodyParameters, options: .prettyPrinted),
+                    urlParameters: try JSONEncoderForParam(urlEncodable))
+                }else{
+                    return .requestCompositeData(bodyData: Data(),
+                                                 urlParameters: try JSONEncoderForParam(urlEncodable))
+                }
+            } catch {
+                #if DEBUG
+                print("\(error.localizedDescription)")
+                #endif
+                return .requestCompositeData(bodyData: Data(), urlParameters: [:])
             }
         case .downloadParameters(let parameters, let encoding, let destination):
             return .downloadParameters(parameters: parameters, encoding: encoding, destination: destination)
         case .uploadCompositeMultipart(let sd, let urlParameters):
             return .uploadCompositeMultipart(sd, urlParameters: urlParameters)
+        
         }
     }
 
@@ -102,7 +121,7 @@ public enum DDCustomTarget: TargetTypeExtension {
              .uploadCompositeMultipart(sd: _, urlParameters: let dic):
             strEncode = DDParamEscape(dic).escape()
         case .getRequestEncodable(let encodable),
-             .postRequestEncodable(bodyParameters: _, urlEncodable: let encodable):
+             .postRequestEncodable(bodyParameters: _, let encodable):
             do {
                 strEncode = DDParamEscape(try JSONEncoderForParam(encodable)).escape()
             } catch {

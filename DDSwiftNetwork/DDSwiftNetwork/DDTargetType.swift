@@ -49,12 +49,11 @@ public enum DDTask {
     case getRequestEncodable(Encodable?)
     
 //POST
-    case postRequestParam(bodyParameters: [String: Any],
+    //请求时会将body转为Data
+    case postRequestParam(bodyParameters: Any?,
         urlParameters: [String: Any])
-    //default OutputFormat:prettyPrinted
-    case postRequestEncodable(bodyParameters: [String: Any],
+    case postRequestEncodable(bodyParameters: Any?,
         urlEncodable: Encodable?)
-    
 //Download
     case downloadParameters(parameters: [String: Any],
         encoding: URLEncoding,

@@ -41,6 +41,7 @@ final class DDNetworkActivityPlugin: PluginType {
             objc_sync_exit(self)
         }else{
             hud?.hideInMainThread()
+            hud = nil
             activialCount = 0
         }
         

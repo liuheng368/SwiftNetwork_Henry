@@ -20,21 +20,21 @@ public extension Reactive where Base: MoyaProviderType {
     /// 上传图片，优先使用:七牛云,降级方案:有拍云
     /// - Parameter token: <#token description#>
     /// - Parameter callbackQueue: <#callbackQueue description#>
-    func uploadImages(_ target: Base.Target, images:[UIImage]) -> Observable<[String]> {
+    func uploadImages(_ target: Base.Target,_ images:[UIImage]) -> Observable<[String]> {
         let hud = DDShowHUD.determinate(title: "已传0张/共\(images.count)张").show()
         hud.progress = 0
         var arrImgUrl : [String] = []
-        
         return Observable.create {(observe) -> Disposable in
-            var disposeBag = DisposeBag()
+            //避免内置方法局部变量被释放
+            let networker = DDMoyaProvider().rx
+            let disposeBag = DisposeBag()
             func upload() {
                 if arrImgUrl.count >= images.count {
                     observe.onNext(arrImgUrl)
                     observe.onCompleted()
                     return
                 }
-                DDMoyaProvider().rx
-                    .requestContent(target as! DDCustomTarget)
+                networker.requestForContent(target as! DDCustomTarget)
                     .subscribe(onSuccess: { (obj) in
                         if let dic = obj as? [String:Any] {
                             self.uploadQiniu(dic, images[arrImgUrl.count], images.count, arrImgUrl.count, hud) { (str) in
@@ -75,8 +75,10 @@ public extension Reactive where Base: MoyaProviderType {
             hud.label.text = "已传\(doneImg)张/共\(total)张"
             let option = QNUploadOption(progressHandler: { (key_, percent) in
                 if key == key_ {
-                    let f = 1 / Float(total)
-                    hud.progress = f * Float(doneImg) + f * percent
+                    DispatchQueue.main.async {
+                        let f = 1 / Float(total)
+                        hud.progress = f * Float(doneImg) + f * percent
+                    }
                 }
             })
             let upManager = QNUploadManager()
@@ -117,8 +119,10 @@ public extension Reactive where Base: MoyaProviderType {
                 let imgData = UIImageJPEGRepresentation(image, 0.8)
                 #endif
                 upYun?.uploadFile(with: imgData, useSaveKey: keyString, progress: { (percent) in
-                    let f = 1 / Float(total)
-                    hud.progress = f * Float(doneImg) + f * Float(percent)
+                    DispatchQueue.main.async {
+                        let f = 1 / Float(total)
+                        hud.progress = f * Float(doneImg) + f * Float(percent)
+                    }
                 }, completion: { (success, result, error) in
                     if success {
                         if let result = result,
