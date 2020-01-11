@@ -113,8 +113,8 @@ extension DDShowHUD {
         hud.mode = .customView
         hud.customView = UIImageView(image: DDShowHUD.ErrorImg)
         hud.isSquare = true
-        hud.detailsLabel.text = title
-        hud.detailsLabel.font = UIFont.systemFont(ofSize: 17)
+        hud.label.text = title
+        hud.label.font = UIFont.systemFont(ofSize: 17)
         hud.bezelView.style = .solidColor
         hud.bezelView.color = UIColor(white: 0, alpha: 0.9)
         hud.contentColor = UIColor.white
@@ -224,10 +224,10 @@ fileprivate func readCurrentController(_ window:UIWindow?) -> UIViewController? 
 
 fileprivate class GetImageBundle {
     static func getImageBundle(imageName:String) -> UIImage {
-        let path = Bundle(for: GetImageBundle.self).resourcePath! + "/DDSwiftNetwork.bundle/DDNetworkHudImage.bundle"
-        let caBundle = Bundle(path: path)
-        let image = UIImage(contentsOfFile: (caBundle?.path(forResource: imageName, ofType: "png"))!)
-        image!.withRenderingMode(.alwaysTemplate)
-        return image!
+        let bundle = Bundle(path: Bundle.main.path(forResource: "DDNetworkHudImage", ofType: "bundle")!)
+        let image = UIImage(named: imageName, in: bundle, compatibleWith: nil) ?? UIImage()
+        image.withRenderingMode(.alwaysTemplate)
+        return image
+
     }
 }
