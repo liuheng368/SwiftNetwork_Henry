@@ -49,6 +49,8 @@ public enum DDCustomTarget: TargetTypeExtension {
     /// The HTTP method of the embedded target.
     public var method: Moya.Method {
         switch target.task {
+        case .default:
+            return .get
         case .getRequestEncodable(_),
              .getRequestParam(parameters: _),
              .downloadParameters(parameters: _, encoding: _, destination: _):
@@ -63,6 +65,8 @@ public enum DDCustomTarget: TargetTypeExtension {
     /// The `Task` of the embedded target.
     public var task: Task {
         switch target.task {
+        case .default :
+            return .requestPlain
         case .getRequestParam(parameters: let urlParameters):
             return .requestParameters(parameters: urlParameters, encoding: URLEncoding.default)
         case .getRequestEncodable(let encodable):
@@ -115,6 +119,8 @@ public enum DDCustomTarget: TargetTypeExtension {
     public var headers: [String: String]? {
         var strEncode = ""
         switch target.task {
+        case .default :
+            strEncode = ""
         case .getRequestParam(parameters: let dic),
              .postRequestParam(bodyParameters: _, urlParameters: let dic),
              .downloadParameters(parameters: let dic, encoding: _, destination: _),
@@ -134,9 +140,9 @@ public enum DDCustomTarget: TargetTypeExtension {
             return ["":""]
         }
         if target.bLmitate {
-            header["Verification-Hash"] = "Alan.P"
+            header["Verification-Hash"] = "henry.beer"
         }else{
-            header["Verification-Hash"] = "\(strEncode)Athens".MD5()
+            header["Verification-Hash"] = "\(strEncode).henry.beer".MD5()
         }
         return header
     }

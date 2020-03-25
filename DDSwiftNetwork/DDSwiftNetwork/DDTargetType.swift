@@ -42,6 +42,8 @@ public protocol DDTargetType {
 }
 
 public enum DDTask {
+//Default
+    case `default`
     
 //GET
     case getRequestParam(parameters: [String: Any])

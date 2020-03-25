@@ -94,7 +94,7 @@ extension DDShowHUD {
         hud.removeFromSuperViewOnHide = true
         hud.mode = .customView
         hud.customView = UIImageView(image: DDShowHUD.SuccessImg)
-        hud.isSquare = true
+        hud.isSquare = false
         hud.detailsLabel.text = title
         hud.detailsLabel.font = UIFont.systemFont(ofSize: 17)
         hud.bezelView.style = .solidColor
@@ -112,9 +112,9 @@ extension DDShowHUD {
         hud.removeFromSuperViewOnHide = true
         hud.mode = .customView
         hud.customView = UIImageView(image: DDShowHUD.ErrorImg)
-        hud.isSquare = true
-        hud.label.text = title
-        hud.label.font = UIFont.systemFont(ofSize: 17)
+        hud.isSquare = false
+        hud.detailsLabel.text = title
+        hud.detailsLabel.font = UIFont.systemFont(ofSize: 17)
         hud.bezelView.style = .solidColor
         hud.bezelView.color = UIColor(white: 0, alpha: 0.9)
         hud.contentColor = UIColor.white
@@ -130,7 +130,7 @@ extension DDShowHUD {
         hud.removeFromSuperViewOnHide = true
         hud.mode = .customView
         hud.customView = UIImageView(image: DDShowHUD.WarningImg)
-        hud.isSquare = true
+        hud.isSquare = false
         hud.detailsLabel.text = title
         hud.detailsLabel.font = UIFont.systemFont(ofSize: 17)
         hud.bezelView.style = .solidColor
@@ -224,10 +224,10 @@ fileprivate func readCurrentController(_ window:UIWindow?) -> UIViewController? 
 
 fileprivate class GetImageBundle {
     static func getImageBundle(imageName:String) -> UIImage {
-        let bundle = Bundle(path: Bundle.main.path(forResource: "DDNetworkHudImage", ofType: "bundle")!)
-        let image = UIImage(named: imageName, in: bundle, compatibleWith: nil) ?? UIImage()
-        image.withRenderingMode(.alwaysTemplate)
-        return image
-
+        let path = Bundle(for: GetImageBundle.self).resourcePath! + "/DDSwiftNetwork.bundle/DDNetworkHudImage.bundle"
+        let caBundle = Bundle(path: path)
+        let image = UIImage(contentsOfFile: (caBundle?.path(forResource: imageName, ofType: "png"))!)
+        image!.withRenderingMode(.alwaysTemplate)
+        return image!
     }
 }

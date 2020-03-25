@@ -74,9 +74,12 @@ public extension Reactive where Base: MoyaProviderType {
                     do {
                         let successRes = try response.filterSuccessfulStatusCodes()
                         if let strJson = try? successRes.mapJSON(),
-                            let successDic = strJson as? [String:Any],
-                            let content = successDic["content"]{
-                            single(.success(content))
+                            let successDic = strJson as? [String:Any] {
+                            if let content = successDic["content"] {
+                                single(.success(content))
+                            }else{
+                                single(.error(DDNetworkError.networkError(errorCode: successDic["errorCode"] as? String, errorMsg: successDic["errorMsg"] as? String)))
+                            }
                         }else{
                             single(.error(DDNetworkError
                                 .responseJson(data: response.data)))

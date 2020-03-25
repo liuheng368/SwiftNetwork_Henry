@@ -39,7 +39,7 @@ final class DDNetworkLoggerPlugin: PluginType {
         """
         [NetworkLogger:Request
         Method: \(target.method)
-        URL: \(target.baseURL.path)\(target.path)
+        URL: \(target.baseURL.absoluteString)\(target.path)
         Header: \(header)
         Params: \(requestParam(target))]
         """

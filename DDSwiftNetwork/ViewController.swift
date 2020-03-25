@@ -30,14 +30,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DDShowHUD.error(title: "sdfdsfsdfsdfffsdfdf,dfsdf", duration: 100).show()
-        
-//        network.rx.requestContent(CreateTarget(ListRequest.listDic))
-//            .subscribe(onSuccess: { (any) in
-//                print(any)
-//            }) { (err) in
-//                print(err)
-//        }.disposed(by: disposeBag)
+//        DDShowHUD.error(title: "sdfdsfsdfsdfffsdfdf,dfsdf", duration: 100).show()
+        network.rx.requestForContent(CreateTarget(ListRequest.listDic)).subscribe(onSuccess: { (any) in
+            print(any)
+        }) { (e) in
+            print(e)
+        }.disposed(by: disposeBag)
 //
 //        network.rx.requestDecodable(CreateTarget(ListRequest.listEncodable), ListResponse.self).subscribe(onSuccess: { (model) in
 //            print(model)

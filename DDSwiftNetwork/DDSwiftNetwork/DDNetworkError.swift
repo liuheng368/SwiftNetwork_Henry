@@ -21,6 +21,8 @@ public enum DDNetworkError : Error {
     case responseEncoding(data:Data)
     
     case imageUpload
+    
+    case networkError(errorCode:String?,errorMsg:String?)
 }
 
 extension DDNetworkError: LocalizedError {
@@ -40,6 +42,8 @@ extension DDNetworkError: LocalizedError {
             return "[DDNetworkError:响应Data无法通过Encoding解析]"
         case .imageUpload:
             return "[DDNetworkError:图片上传出错]"
+        case .networkError(errorCode: _,let errorMsg):
+            return "\(errorMsg ?? "请求错误")"
         }
     }
     
